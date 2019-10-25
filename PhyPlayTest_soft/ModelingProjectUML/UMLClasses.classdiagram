@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="15e17724-3eeb-4749-97f5-daca42b0b655" name="UMLClasses" linkedPackageId="028b5969-2d03-496c-964c-fc826a03361d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="0c2e1c7b-4849-4363-ac1e-de49315298bc">
+      <profileInstance Id="deecf2cf-58e1-4421-a634-8b7f9a9e6224" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="54e95e35-48cc-456a-9373-b62834cdd0e0">
+      <profileInstance Id="33c17e85-7fcf-4570-8f3c-d718a4f1bc0b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f8f4ceb9-c7df-45b9-be5b-865fce8eb255" name="MainForm" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4e81be72-1322-42e2-af0d-65b86b191b95" />
+        <targetEnds>
+          <association Id="7dc56945-75f7-4e1e-8a9d-2d0b56b6d890" isDerived="false" sourceEndRoleName="mainForm" targetEndRoleName="liveSequencer" isLeaf="false" isAbstract="false">
+            <classMoniker Id="ac3ab9d9-141b-400a-9e22-4212df46c01f" LastKnownName="LiveSequencer" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="951d68a8-12b0-4852-8275-b7df254d7bfd" name="mainForm" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false">
+                  <elementDefinition Id="0334eec4-dac5-4085-ac0f-0e7ba67052d3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="848baadc-580d-44e6-b958-b61b7d796acb" name="liveSequencer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d9bc2f2b-4faa-4faf-9810-7a68005f4e4f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f441ab65-b33c-4508-91fa-0e0e3d14a201" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="349fb0f5-84ab-4d23-b0d8-64a923695ccf" name="MainForm" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9e8f2524-eb23-4016-b832-e72637061a5c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5a74d5e6-3268-4b50-b312-1a5200fc9942" name="Model" isAbstract="true" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a3a3c9de-cceb-42ad-88d0-91f6259f3da7" />
+        <ownedAttributesInternal>
+          <property Id="a819d4fd-e36d-4522-afeb-69207e945e15" name="dataArray" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="432efbc8-fc3a-433e-9cca-bd507d82b7bd" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6916bde8-bbb1-4f6a-b8fa-9c7b9c50a3ed" LastKnownName="Frames[]" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="9fef3a8d-8022-4dac-97e2-8a90506835cc" name="DataWriter" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="995668c1-4c95-4318-a8e5-0b12b8f64592" />
+        <ownedOperationsInternal>
+          <operation Id="ce3f0089-6d0d-4e86-a347-b175bb762743" name="DataWriter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e69809da-de8c-4512-9e8a-e961133d9937" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="ac3ab9d9-141b-400a-9e22-4212df46c01f" name="LiveSequencer" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e23e721a-5aaa-4540-a26a-36d8d4cb03ed" />
+        <targetEnds>
+          <association Id="6516e881-06f6-4828-b4c1-86dd98816dbe" isDerived="false" sourceEndRoleName=" " targetEndRoleName="bitalino" isLeaf="false" isAbstract="false">
+            <classMoniker Id="360b732d-dbf5-47c1-a155-32c1f9265d3e" LastKnownName="BITalino" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="dfd9b542-833a-49ac-ae54-200605aa05b9" name=" " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString Id="78f60cbc-f179-4cae-ae9c-f0aa589b827f" name="Lower">
+                      <elementDefinition Id="102213ca-80db-47e5-a7e9-fca67ee28ab4" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ac7b4135-7f8f-41cb-95d3-2c3924e5e3ed" name="Upper">
+                      <elementDefinition Id="784dfe09-39e5-46b0-8825-592d0412d3b2" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="2858a257-78d6-48a8-8d8a-f3ded1e3bd57" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f5f3236b-ceb8-435b-8b2f-2ae294effd20" name="bitalino" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d26cb1a7-0f9d-4758-b2eb-808b6ae736a5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="39f9e906-71a4-4669-84d5-dc2241f3f147" />
+          </association>
+          <association Id="4e03ec99-f1f2-4829-b6f2-b8773cce48ea" isDerived="false" sourceEndRoleName="liveSequencer" targetEndRoleName="Model" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5a74d5e6-3268-4b50-b312-1a5200fc9942" LastKnownName="Model" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b6a235f0-4574-43b9-a435-8d79f76f5615" name="liveSequencer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false">
+                  <elementDefinition Id="00a8086a-cb89-4177-8b32-6e415d84edbc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="57f7606b-155f-41da-bec2-612e468a68b0" name="Model" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="322d3f7d-579e-42d4-9866-de61b9cb677c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c2561f51-4a29-4577-a07e-3ef0580e1ea0" />
+          </association>
+          <association Id="47ef9971-4d9b-4fee-8e0a-a88039a92e7b" isDerived="false" sourceEndRoleName="liveSequencer" targetEndRoleName="dataWriter" isLeaf="false" isAbstract="false">
+            <classMoniker Id="9fef3a8d-8022-4dac-97e2-8a90506835cc" LastKnownName="DataWriter" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3a3ddd88-fe9f-4c67-b85e-2855e4b89085" name="liveSequencer" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false">
+                  <elementDefinition Id="f7434138-bbcf-4d30-88c8-471f659b73fe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="89be7ee0-aa4b-416a-8835-69cd481121f1" name="dataWriter" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="760baa8d-e12b-4991-8320-065b51a63279" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0c1a55c9-d2fc-4824-9dee-e90402ab8f66" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="3e2cf3be-8466-4729-8c59-3b8495c80602" name="LiveSequencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4298c1d0-e6d0-4a66-be58-ba0609ee278f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="50cf9b18-82ae-4bde-9f0d-a83fb1a08a86" name="AtkinsMandrykModel" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="9d463a03-727f-4117-8a0a-b70b3538b3ce" />
+        <generalsInternal>
+          <generalization Id="61da0d42-71a5-4fd7-a872-fb990cd22d0f" isSubstitutable="false">
+            <classMoniker Id="5a74d5e6-3268-4b50-b312-1a5200fc9942" LastKnownName="Model" />
+            <elementDefinition Id="ba7e70dc-3d57-4808-a038-f82987aaf488" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="4fe09e2f-ee08-4eb5-a3a6-dae7bd967d9a" name="AtkinsMandrykModel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="de08580f-344a-4aa2-8092-059100cbd277" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="91106b29-e082-40c9-91c8-d9f5adba1ce0" name="data" direction="In" isUnique="false">
+                  <elementDefinition Id="c0cb5670-6949-4701-878e-a941fb3b7afe" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6916bde8-bbb1-4f6a-b8fa-9c7b9c50a3ed" LastKnownName="Frames[]" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="360b732d-dbf5-47c1-a155-32c1f9265d3e" name="BITalino" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="49bb43e8-ecf8-44e1-9c04-b574bdc9ea88" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="74af0c58-4018-4f76-b485-a59eab25df5b" name="Frame" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="49b8470b-bd25-4a34-a2e5-dd4db1d41373" />
+        <generalsInternal>
+          <generalization Id="43f4cde1-7fd1-451a-8f9c-3f4da7f9cc77" isSubstitutable="false">
+            <classMoniker Id="360b732d-dbf5-47c1-a155-32c1f9265d3e" LastKnownName="BITalino" />
+            <elementDefinition Id="bb1ff10a-9af3-43b1-b892-a11ab6acb107" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0996da01-82cd-4d4a-865a-9168ef05bd20" name="State" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="96d04b3f-a9ac-44d7-9b88-844f0188174e" />
+        <generalsInternal>
+          <generalization Id="f4b55380-3730-42ba-ae3f-0557842eb709" isSubstitutable="false">
+            <classMoniker Id="360b732d-dbf5-47c1-a155-32c1f9265d3e" LastKnownName="BITalino" />
+            <elementDefinition Id="2c3f200a-40c8-4fb0-8a25-108b9aa108eb" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c8e971bf-d2a0-4f1d-98c6-c11fa697c7b1" name="DevInfo" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c3b129c6-3815-4114-8f0b-19f8413c8bea" />
+        <generalsInternal>
+          <generalization Id="7f51fa80-2849-4a36-b478-2c6de866fa3f" isSubstitutable="false">
+            <classMoniker Id="360b732d-dbf5-47c1-a155-32c1f9265d3e" LastKnownName="BITalino" />
+            <elementDefinition Id="5f1b08cb-7351-4b23-ac74-8e79a7a2803f" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="483db68d-65fd-4d82-b500-fa8571b004ef" name="Exception" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="73a37e5c-3ada-4c80-8709-6ba3ea2ae31b" />
+        <generalsInternal>
+          <generalization Id="c931b202-e8c4-457e-ae6f-5fe0d7aa29c3" isSubstitutable="false">
+            <classMoniker Id="360b732d-dbf5-47c1-a155-32c1f9265d3e" LastKnownName="BITalino" />
+            <elementDefinition Id="25683528-9a00-4d14-9ab8-41071f61363e" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="6916bde8-bbb1-4f6a-b8fa-9c7b9c50a3ed" name="Frames[]" isAbstract="false" isLeaf="false" cachedFullName="Frames[]">
+        <elementDefinition Id="3563a268-0abf-455d-8c02-b9fb634f7e58" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="028b5969-2d03-496c-964c-fc826a03361d" name="ModelingProjectUML">
+    <elementDefinition Id="a817a2bd-a667-475f-8239-d075b0906306" />
+  </package>
+</logicalClassDesignerModel>
