@@ -74,6 +74,30 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="3116fc0e-d8aa-4a74-950a-76c280e4dea0"
+            name="Pause"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ed655786-c336-4b97-9c90-e74f818a35f9"
+            name="Stop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="72629b3a-b712-42ec-8807-b91f03f765cb"
+            name="Start"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -95,7 +119,7 @@
         <ownedAttributesInternal>
           <property
             Id="432efbc8-fc3a-433e-9cca-bd507d82b7bd"
-            name="dataArray"
+            name="framesArray"
             visibility="Private"
             isLeaf="false"
             isStatic="false"
@@ -112,7 +136,102 @@
                 LastKnownLocation="ModelingProjectUML.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="4300a9d3-4d0a-4a88-a6a9-a3e957bdf513"
+            name="dataArray"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="c043ea0a-c9ad-43fc-9c97-e8807fe03b89"
+                LastKnownName="double[][]"
+                LastKnownLocation="ModelingProjectUML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="0b490de6-5c8e-442b-810c-f46c54b56441"
+            name="timeInterval"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="96bb7c76-be1a-4802-bed8-1907c940d603"
+                LastKnownName="double"
+                LastKnownLocation="ModelingProjectUML.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6c10cece-7409-4f58-b6cb-76fbcae3df15"
+            name="StatesNames"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0b5f196e-e220-44ab-9658-d43b5e26ee96"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="372380f9-a35c-489c-a174-95420a6214cb"
+                      LastKnownName="string[]"
+                      LastKnownLocation="ModelingProjectUML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="c76ad057-2d12-426e-b43b-800b4709ad0b"
+            name="TimedStates"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="025f8497-fc9b-45f6-980a-cf0462af8b15"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="4b9ecf75-fb09-447d-802a-bdb7d6eb94f0"
+                      LastKnownName="byte[][]"
+                      LastKnownLocation="ModelingProjectUML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="160172fd-2c75-45bd-84e3-5f9042a906c2"
+            name="FramesToData"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -269,10 +388,50 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="a1ce9bba-da05-45b9-80dd-c5571f4a08b5"
+            name="startTimer : DateTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="40c14364-c9d8-439e-9726-f3ff9b3a5bee"
+            name="endTimer : DateTime"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="4298c1d0-e6d0-4a66-be58-ba0609ee278f"
             name="LiveSequencer"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f87cecf8-69c8-415f-a352-4d9ce4e5423e"
+            name="EndSession"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="75c6e187-d307-4045-894b-757ad378f8c5"
+            name="StartSession"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -298,6 +457,46 @@
               LastKnownLocation="ModelingProjectUML.uml" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="57d184d4-2ba5-4e26-9454-84c90ecfb66a"
+            name="sensorsStates"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4b9ecf75-fb09-447d-802a-bdb7d6eb94f0"
+                LastKnownName="byte[][]"
+                LastKnownLocation="ModelingProjectUML.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f43c1705-d95b-46c0-91a1-79b0c1a23b2a"
+            name="valenceArousalStates"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4b9ecf75-fb09-447d-802a-bdb7d6eb94f0"
+                LastKnownName="byte[][]"
+                LastKnownLocation="ModelingProjectUML.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="de08580f-344a-4aa2-8092-059100cbd277"
@@ -310,8 +509,8 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="c0cb5670-6949-4701-878e-a941fb3b7afe"
-                  name="data"
+                  Id="224b7cda-5c16-460d-8c1f-844c8242e0dc"
+                  name="frames"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
@@ -322,8 +521,40 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e6d525e0-4857-49e5-bd5a-8f15871628f8"
+                  name="intervalle"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="96bb7c76-be1a-4802-bed8-1907c940d603"
+                      LastKnownName="double"
+                      LastKnownLocation="ModelingProjectUML.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="5ccebd3f-0333-4615-a474-5dd879fd8175"
+            name="DataToSensors"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="241d34d2-8bf6-4b80-814b-86b0c5b455ca"
+            name="SensorsToValenceArousal"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -415,6 +646,56 @@
       <undefinedType
         Id="3563a268-0abf-455d-8c02-b9fb634f7e58"
         name="Frames[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="372380f9-a35c-489c-a174-95420a6214cb"
+        name="string[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="5dc80b85-fedb-4487-aca2-c40833ed6602"
+        name="DateTime[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c0eb234a-3877-4433-9595-061d26a68e9d"
+        name="DateTime[][]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c043ea0a-c9ad-43fc-9c97-e8807fe03b89"
+        name="double[][]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="1a0f3d5c-a22d-4f38-93f3-01a8d71e4b02"
+        name="char[]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="029bb225-ee77-481b-a62f-40d569764b8e"
+        name="char[][]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4b9ecf75-fb09-447d-802a-bdb7d6eb94f0"
+        name="byte[][]" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="96bb7c76-be1a-4802-bed8-1907c940d603"
+        name="double" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f4fa2191-dc5a-4699-9acb-385cd385a979"
+        name="Frames" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4045394f-30f3-49c8-b42a-34dedabc681f"
+        name="DateTime" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

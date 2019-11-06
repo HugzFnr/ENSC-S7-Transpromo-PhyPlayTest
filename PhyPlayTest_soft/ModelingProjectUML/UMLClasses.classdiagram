@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="15e17724-3eeb-4749-97f5-daca42b0b655" name="UMLClasses" linkedPackageId="028b5969-2d03-496c-964c-fc826a03361d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="0c2e1c7b-4849-4363-ac1e-de49315298bc">
-      <profileInstance Id="deecf2cf-58e1-4421-a634-8b7f9a9e6224" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="54e95e35-48cc-456a-9373-b62834cdd0e0">
-      <profileInstance Id="33c17e85-7fcf-4570-8f3c-d718a4f1bc0b" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="f8f4ceb9-c7df-45b9-be5b-865fce8eb255" name="MainForm" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -40,6 +26,15 @@
           <operation Id="349fb0f5-84ab-4d23-b0d8-64a923695ccf" name="MainForm" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="9e8f2524-eb23-4016-b832-e72637061a5c" />
           </operation>
+          <operation Id="ed8c3c6b-62dd-4295-8194-39f2120439a1" name="Pause" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3116fc0e-d8aa-4a74-950a-76c280e4dea0" />
+          </operation>
+          <operation Id="bb26dbde-f487-4881-9257-1ba00ba620e2" name="Stop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ed655786-c336-4b97-9c90-e74f818a35f9" />
+          </operation>
+          <operation Id="583d8ea1-155a-4a19-b290-5c8a38173b2d" name="Start" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="72629b3a-b712-42ec-8807-b91f03f765cb" />
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -47,13 +42,56 @@
       <class Id="5a74d5e6-3268-4b50-b312-1a5200fc9942" name="Model" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="a3a3c9de-cceb-42ad-88d0-91f6259f3da7" />
         <ownedAttributesInternal>
-          <property Id="a819d4fd-e36d-4522-afeb-69207e945e15" name="dataArray" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="a819d4fd-e36d-4522-afeb-69207e945e15" name="framesArray" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="432efbc8-fc3a-433e-9cca-bd507d82b7bd" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="6916bde8-bbb1-4f6a-b8fa-9c7b9c50a3ed" LastKnownName="Frames[]" />
+              <referencedTypeMoniker Id="6192edf3-17bc-44fb-846e-cb8cbee0801c" LastKnownName="Frames[]" />
+            </type_NamedElement>
+          </property>
+          <property Id="cf1541c3-cc7d-4e1d-b5dd-a8aa44879bf1" name="dataArray" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4300a9d3-4d0a-4a88-a6a9-a3e957bdf513" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="709e0aae-acda-41b1-bbfc-1ce00cdf5d15" LastKnownName="double[][]" />
+            </type_NamedElement>
+          </property>
+          <property Id="163a5119-f978-45a4-9b7f-16819afd5847" name="timeInterval" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0b490de6-5c8e-442b-810c-f46c54b56441" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="b565b3ee-aa3d-4d47-a122-f8bf8f4d7273" LastKnownName="double" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="12a9796a-9d5c-40e1-9930-cae43a42e9cf" name="StatesNames" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6c10cece-7409-4f58-b6cb-76fbcae3df15" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="92fa7360-6cd5-46b1-9b4e-4be030374b87" direction="Return" isUnique="false">
+                  <elementDefinition Id="0b5f196e-e220-44ab-9658-d43b5e26ee96" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="507963b2-e28b-45b3-952d-7b063a680133" LastKnownName="string[]" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9fdaab68-3300-48b4-84d1-03b20f122daa" name="TimedStates" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c76ad057-2d12-426e-b43b-800b4709ad0b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="45b1ab0d-a83a-4003-98df-a8201b32b420" direction="Return" isUnique="false">
+                  <elementDefinition Id="025f8497-fc9b-45f6-980a-cf0462af8b15" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ec44d9e8-8e9e-4cd5-be2d-e007ec95b6e1" LastKnownName="byte[][]" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e8a72175-c292-4792-ab4a-33ff978d8c53" name="FramesToData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="160172fd-2c75-45bd-84e3-5f9042a906c2" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -129,9 +167,23 @@
             <elementDefinition Id="0c1a55c9-d2fc-4824-9dee-e90402ab8f66" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="ee00017d-f89f-4880-91a6-eddfc0a72b5d" name="startTimer : DateTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a1ce9bba-da05-45b9-80dd-c5571f4a08b5" />
+          </property>
+          <property Id="7f158a9d-cb9f-4461-8cac-bfb43b74ef00" name="endTimer : DateTime" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="40c14364-c9d8-439e-9726-f3ff9b3a5bee" />
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="3e2cf3be-8466-4729-8c59-3b8495c80602" name="LiveSequencer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="4298c1d0-e6d0-4a66-be58-ba0609ee278f" />
+          </operation>
+          <operation Id="f9720494-2536-47d6-80ae-9fbdee07040c" name="EndSession" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f87cecf8-69c8-415f-a352-4d9ce4e5423e" />
+          </operation>
+          <operation Id="ea371818-15b5-4350-b17c-105f30450b0e" name="StartSession" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="75c6e187-d307-4045-894b-757ad378f8c5" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -145,19 +197,47 @@
             <elementDefinition Id="ba7e70dc-3d57-4808-a038-f82987aaf488" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="c0215a86-879f-4d02-af14-2da51ca3dd57" name="sensorsStates" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="57d184d4-2ba5-4e26-9454-84c90ecfb66a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ec44d9e8-8e9e-4cd5-be2d-e007ec95b6e1" LastKnownName="byte[][]" />
+            </type_NamedElement>
+          </property>
+          <property Id="a95a73e2-2a2a-431f-9579-87f03ef28dc2" name="valenceArousalStates" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f43c1705-d95b-46c0-91a1-79b0c1a23b2a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="b0a427d0-6967-4735-b3d5-8d79785f2c63" LastKnownName="byte[][]" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="4fe09e2f-ee08-4eb5-a3a6-dae7bd967d9a" name="AtkinsMandrykModel" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="de08580f-344a-4aa2-8092-059100cbd277" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="91106b29-e082-40c9-91c8-d9f5adba1ce0" name="data" direction="In" isUnique="false">
-                  <elementDefinition Id="c0cb5670-6949-4701-878e-a941fb3b7afe" />
+                <parameter Id="e2b304f9-5b88-45bc-89a3-c98a738713df" name="frames" direction="In" isUnique="false">
+                  <elementDefinition Id="224b7cda-5c16-460d-8c1f-844c8242e0dc" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="6916bde8-bbb1-4f6a-b8fa-9c7b9c50a3ed" LastKnownName="Frames[]" />
+                    <referencedTypeMoniker Id="6192edf3-17bc-44fb-846e-cb8cbee0801c" LastKnownName="Frames[]" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9a9addb0-82b8-43ce-b66d-9be83195b359" name="intervalle" direction="In" isUnique="false">
+                  <elementDefinition Id="e6d525e0-4857-49e5-bd5a-8f15871628f8" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="b565b3ee-aa3d-4d47-a122-f8bf8f4d7273" LastKnownName="double" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
+          </operation>
+          <operation Id="3a03e123-e70e-4b92-ae7a-1e8e9c82dc05" name="DataToSensors" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5ccebd3f-0333-4615-a474-5dd879fd8175" />
+          </operation>
+          <operation Id="634cca25-337c-49a0-97e2-22f2a72557ac" name="SensorsToValenceArousal" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="241d34d2-8bf6-4b80-814b-86b0c5b455ca" />
           </operation>
         </ownedOperationsInternal>
       </class>
@@ -212,12 +292,51 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
-      <referencedType Id="6916bde8-bbb1-4f6a-b8fa-9c7b9c50a3ed" name="Frames[]" isAbstract="false" isLeaf="false" cachedFullName="Frames[]">
+      <referencedType Id="507963b2-e28b-45b3-952d-7b063a680133" name="string[]" isAbstract="false" isLeaf="false" cachedFullName="string[]">
+        <elementDefinition Id="372380f9-a35c-489c-a174-95420a6214cb" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="709e0aae-acda-41b1-bbfc-1ce00cdf5d15" name="double[][]" isAbstract="false" isLeaf="false" cachedFullName="double[][]">
+        <elementDefinition Id="c043ea0a-c9ad-43fc-9c97-e8807fe03b89" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="6192edf3-17bc-44fb-846e-cb8cbee0801c" name="Frames[]" isAbstract="false" isLeaf="false" cachedFullName="Frames[]">
         <elementDefinition Id="3563a268-0abf-455d-8c02-b9fb634f7e58" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ec44d9e8-8e9e-4cd5-be2d-e007ec95b6e1" name="byte[][]" isAbstract="false" isLeaf="false" cachedFullName="byte[][]">
+        <elementDefinition Id="4b9ecf75-fb09-447d-802a-bdb7d6eb94f0" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b565b3ee-aa3d-4d47-a122-f8bf8f4d7273" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="96bb7c76-be1a-4802-bed8-1907c940d603" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="b0a427d0-6967-4735-b3d5-8d79785f2c63" name="byte[][]" isAbstract="false" isLeaf="false" cachedFullName="byte[][]">
+        <elementDefinition Id="4b9ecf75-fb09-447d-802a-bdb7d6eb94f0" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
   <package Id="028b5969-2d03-496c-964c-fc826a03361d" name="ModelingProjectUML">
     <elementDefinition Id="a817a2bd-a667-475f-8239-d075b0906306" />
+    <profileInstances>
+      <packageHasProfileInstances Id="0c2e1c7b-4849-4363-ac1e-de49315298bc">
+        <profileInstance Id="deecf2cf-58e1-4421-a634-8b7f9a9e6224" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="54e95e35-48cc-456a-9373-b62834cdd0e0">
+        <profileInstance Id="33c17e85-7fcf-4570-8f3c-d718a4f1bc0b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

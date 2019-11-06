@@ -2,8 +2,8 @@ H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\De
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\MainForm.exe
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\MainForm.pdb
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.csprojResolveAssemblyReference.cache
-H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.Form1.resources
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.Properties.Resources.resources
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.csproj.GenerateResource.Cache
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.exe
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.pdb
+H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.MainForm.resources

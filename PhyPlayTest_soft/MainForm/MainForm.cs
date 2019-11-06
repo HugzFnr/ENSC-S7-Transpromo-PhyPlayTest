@@ -15,6 +15,12 @@ namespace MainForm
         public MainForm()
         {
             InitializeComponent();
+            DateTime[] tab = new DateTime[60000000];
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.Write(DateTime.Now.Millisecond);
         }
     }
 }
