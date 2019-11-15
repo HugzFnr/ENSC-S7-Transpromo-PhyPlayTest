@@ -7,3 +7,6 @@ H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\De
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.exe
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.pdb
 H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.MainForm.resources
+C:\Users\tmorassin\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\MainForm.exe.config
+C:\Users\tmorassin\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.exe
+C:\Users\tmorassin\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.pdb
