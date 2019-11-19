@@ -76,18 +76,27 @@ public class LiveSequencer
 		set;
 	}
 
+    /// <summary>
+    /// A assigner lors de la creation du bitalino
+    /// </summary>
 	public Bitalino bitalino
 	{
 		get;
 		set;
 	}
 
+    /// <summary>
+    /// A assigner lors de la creation du model
+    /// </summary>
 	public Model Model
 	{
 		get;
 		set;
 	}
 
+    /// <summary>
+    /// A assigner lors de la creation du datawriter
+    /// </summary>
 	public virtual DataWriter dataWriter
 	{
 		get;
@@ -104,12 +113,10 @@ public class LiveSequencer
 	}
 
     /// <summary>
-    /// 
+    /// Constructeur du LiveSequencer, initialise ses attributs accordément.
     /// </summary>
-    /// <param name="nomenclature"></param>
-    /// <param name="interval"></param>
-    /// <param name="idmodel"></param>
-	public LiveSequencer(string nomenclature, double interval, int idmodel)
+	public LiveSequencer(string nomenclature, double interval, int idmodel, MainForm.MainForm mainForm)
+
 	{
 	}
 
