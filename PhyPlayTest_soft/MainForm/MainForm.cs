@@ -22,23 +22,23 @@ namespace MainForm
         {
             System.Diagnostics.Debug.Write(DateTime.Now.Millisecond);
         }
-        public virtual LiveSequencer liveSequencer
+        public LiveSequencer liveSequencer
         {
             get;
             set;
         }
 
-        public virtual void Pause()
+        public void Pause()
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual void Stop()
+        public void Stop()
         {
             throw new System.NotImplementedException();
         }
 
-        public virtual void Start()
+        public void Start()
         {
             throw new System.NotImplementedException();
         }

@@ -11,43 +11,43 @@ using System.Text;
 
 public class LiveSequencer
 {
-	public virtual object startTimer : DateTime
+	public DateTime startTimer
 	{
 		get;
 		set;
 	}
 
-	public virtual object endTimer : DateTime
+	public DateTime endTimer
 	{
 		get;
 		set;
 	}
 
-	public virtual string nomenclature
+	public string nomenclature
 	{
 		get;
 		set;
 	}
 
-	public virtual double timeInterval
+	public double timeInterval
 	{
 		get;
 		set;
 	}
 
-	public virtual int modelChosen
+	public int modelChosen
 	{
 		get;
 		set;
 	}
 
-	public virtual BITalino bitalino
+	public Bitalino bitalino
 	{
 		get;
 		set;
 	}
 
-	public virtual Model Model
+	public Model Model
 	{
 		get;
 		set;
@@ -59,7 +59,7 @@ public class LiveSequencer
 		set;
 	}
 
-	public virtual MainForm mainForm
+	public MainForm.MainForm mainForm
 	{
 		get;
 		set;
@@ -69,12 +69,12 @@ public class LiveSequencer
 	{
 	}
 
-	public virtual void EndSession()
+	public void EndSession()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void StartSession()
+	public void StartSession()
 	{
 		throw new System.NotImplementedException();
 	}

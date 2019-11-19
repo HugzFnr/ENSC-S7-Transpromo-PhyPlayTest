@@ -11,33 +11,33 @@ using System.Text;
 
 public class DataWriter
 {
-	public virtual string path
+	public string path
 	{
 		get;
 		set;
 	}
 
-	public virtual LiveSequencer liveSequencer
+	public LiveSequencer liveSequencer
 	{
 		get;
 		set;
 	}
 
-	public DataWriter(string nomenclature, double) timeInterval)
+	public DataWriter(string nomenclature, double timeInterval)
 	{
 	}
 
-	public virtual void OpenFile()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void WriteData(byte[][] timedStates, string[] statesNames)
+	public void OpenFile()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void CloseFile()
+	public void WriteData(byte[][] timedStates, string[] statesNames)
+	{
+		throw new System.NotImplementedException();
+	}
+
+	public void CloseFile()
 	{
 		throw new System.NotImplementedException();
 	}
