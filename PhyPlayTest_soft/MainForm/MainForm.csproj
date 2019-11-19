@@ -51,7 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AtkinsMandrykModel.cs" />
-    <Compile Include="BITalino.cs" />
     <Compile Include="DataWriter.cs" />
     <Compile Include="LiveSequencer.cs" />
     <Compile Include="MainForm.cs">

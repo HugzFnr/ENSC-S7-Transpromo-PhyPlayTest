@@ -23,7 +23,7 @@ public class AtkinsMandrykModel : Model
 		set;
 	}
 
-	public AtkinsMandrykModel(Frames[] frames, double interval)
+	public AtkinsMandrykModel(Bitalino.Frame[] frames, double interval)
 	{
 	}
 

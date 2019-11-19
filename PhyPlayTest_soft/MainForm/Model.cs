@@ -11,7 +11,7 @@ using System.Text;
 
 public abstract class Model
 {
-	protected virtual Frame[] framesArray
+	protected virtual Bitalino.Frame[] framesArray
 	{
 		get;
 		set;
