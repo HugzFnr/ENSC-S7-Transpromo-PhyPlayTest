@@ -11,7 +11,7 @@ using System.Text;
 
 public class DataWriter
 {
-	private string path
+	public virtual string path
 	{
 		get;
 		set;
@@ -23,7 +23,7 @@ public class DataWriter
 		set;
 	}
 
-	public DataWriter()
+	public DataWriter(string nomenclature, double) timeInterval)
 	{
 	}
 
@@ -32,7 +32,7 @@ public class DataWriter
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void WriteFile(string[] statesNames, byte[][] timedStates)
+	public virtual void WriteData(byte[][] timedStates, string[] statesNames)
 	{
 		throw new System.NotImplementedException();
 	}

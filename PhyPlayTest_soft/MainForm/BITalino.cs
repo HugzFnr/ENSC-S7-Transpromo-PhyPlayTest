@@ -9,32 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class MainForm
+public class BITalino
 {
-	public virtual LiveSequencer liveSequencer
-	{
-		get;
-		set;
-	}
-
-	public MainForm()
-	{
-	}
-
-	public virtual void Pause()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void Stop()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void Start()
-	{
-		throw new System.NotImplementedException();
-	}
-
 }
 

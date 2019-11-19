@@ -23,6 +23,24 @@ public class LiveSequencer
 		set;
 	}
 
+	public virtual string nomenclature
+	{
+		get;
+		set;
+	}
+
+	public virtual double timeInterval
+	{
+		get;
+		set;
+	}
+
+	public virtual int modelChosen
+	{
+		get;
+		set;
+	}
+
 	public virtual BITalino bitalino
 	{
 		get;
@@ -47,7 +65,7 @@ public class LiveSequencer
 		set;
 	}
 
-	public LiveSequencer()
+	public LiveSequencer(string nomenclature, double interval, int idmodel)
 	{
 	}
 
@@ -57,11 +75,6 @@ public class LiveSequencer
 	}
 
 	public virtual void StartSession()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void InitSession()
 	{
 		throw new System.NotImplementedException();
 	}

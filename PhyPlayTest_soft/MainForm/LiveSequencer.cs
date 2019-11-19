@@ -8,23 +8,40 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MainForm;
 
 public class LiveSequencer
 {
-	public DateTime startTimer
+	public virtual object startTimer : DateTime
 	{
 		get;
 		set;
 	}
 
-	public DateTime endTimer
+	public virtual object endTimer : DateTime
 	{
 		get;
 		set;
 	}
 
-	public Bitalino bitalino
+	public virtual string nomenclature
+	{
+		get;
+		set;
+	}
+
+	public virtual double timeInterval
+	{
+		get;
+		set;
+	}
+
+	public virtual int modelChosen
+	{
+		get;
+		set;
+	}
+
+	public virtual BITalino bitalino
 	{
 		get;
 		set;
@@ -42,13 +59,13 @@ public class LiveSequencer
 		set;
 	}
 
-	public MainForm.MainForm mainForm
+	public virtual MainForm mainForm
 	{
 		get;
 		set;
 	}
 
-	public LiveSequencer()
+	public LiveSequencer(string nomenclature, double interval, int idmodel)
 	{
 	}
 
@@ -58,11 +75,6 @@ public class LiveSequencer
 	}
 
 	public virtual void StartSession()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual void InitSession()
 	{
 		throw new System.NotImplementedException();
 	}

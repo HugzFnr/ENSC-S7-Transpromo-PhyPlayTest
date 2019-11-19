@@ -23,16 +23,21 @@ public class AtkinsMandrykModel : Model
 		set;
 	}
 
-	public AtkinsMandrykModel(Bitalino.Frame[] frames, double intervalle)
+	public AtkinsMandrykModel(Frames[] frames, double interval)
 	{
 	}
 
-	private void DataToSensors()
+	private void DataToSensors(double[][] normalizedData)
 	{
 		throw new System.NotImplementedException();
 	}
 
 	private void SensorsToValenceArousal()
+	{
+		throw new System.NotImplementedException();
+	}
+
+	private double[][] NormalizeData()
 	{
 		throw new System.NotImplementedException();
 	}

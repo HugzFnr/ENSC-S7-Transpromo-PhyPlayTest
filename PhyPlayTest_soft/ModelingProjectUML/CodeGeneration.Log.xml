@@ -6,35 +6,33 @@
   <MessageClass Name="Error" Label="Erreur" Option="Afficher les erreurs" />
   <MessageClass Name="Property" Label="Propriété" Option="Afficher les métadonnées" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Afficher les messages de diagnostic" />
-  <Message Timestamp="2019-11-15T07:41:38" Importance="High" Text="Génération du code ou transformation du texte démarrées." />
-  <Message Timestamp="2019-11-15T07:41:38" Importance="Diagnostic" Text="Nom = ClassTemplate" />
-  <Message Timestamp="2019-11-15T07:41:38" Importance="Diagnostic" Text="Remplacer = True" />
-  <Message Timestamp="2019-11-15T07:41:38" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProjectUMLLib\ModelingProjectUMLLib.csproj" />
-  <Message Timestamp="2019-11-15T07:41:38" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
-  <Message Timestamp="2019-11-15T07:41:38" Importance="Diagnostic" Text="TargetName = {Name}" />
-  <Message Timestamp="2019-11-15T07:41:38" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
-  <Message Timestamp="2019-11-15T07:41:38" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
-  <Message Timestamp="2019-11-15T07:41:38" Importance="Medium" Text="La liaison de modèle de texte 'ClassTemplate' de ModelingProjectUML appliquera ClassTemplate.t4 à 'ModelingProjectUML::DataWriter' -  (Class), 'ModelingProjectUML::MainForm' -  (Class), 'ModelingProjectUML::LiveSequencer' -  (Class), 'ModelingProjectUML::Model' -  (Class), 'ModelingProjectUML::AtkinsMandrykModel' -  (Class), 'ModelingProjectUML::BITalino' -  (Class) " />
-  <Message Timestamp="2019-11-15T07:41:50" Importance="Medium" Text="Projet ajouté : H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\ModelingProjectUMLLib.csproj" />
-  <Message Timestamp="2019-11-15T07:41:50" Importance="Medium" Text="'ModelingProjectUML::DataWriter' -  (Class) : réussite (fichier créé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\DataWriter.cs" />
-  <Message Timestamp="2019-11-15T07:41:51" Importance="Medium" Text="'ModelingProjectUML::MainForm' -  (Class) : réussite (fichier créé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\MainForm.cs" />
-  <Message Timestamp="2019-11-15T07:41:51" Importance="Medium" Text="'ModelingProjectUML::LiveSequencer' -  (Class) : réussite (fichier créé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\LiveSequencer.cs" />
-  <Message Timestamp="2019-11-15T07:41:51" Importance="Medium" Text="'ModelingProjectUML::Model' -  (Class) : réussite (fichier créé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\Model.cs" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Medium" Text="'ModelingProjectUML::AtkinsMandrykModel' -  (Class) : réussite (fichier créé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\AtkinsMandrykModel.cs" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Medium" Text="'ModelingProjectUML::BITalino' -  (Class) : réussite (fichier créé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\BITalino.cs" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="Nom = StructTemplate" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="Remplacer = True" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProjectUMLLib\ModelingProjectUMLLib.csproj" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="TargetName = {Name}" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Medium" Text="La liaison de modèle de texte 'StructTemplate' de ModelingProjectUML appliquera StructTemplate.t4 à 'ModelingProjectUML::DataWriter' -  (Class), 'ModelingProjectUML::MainForm' -  (Class), 'ModelingProjectUML::LiveSequencer' -  (Class), 'ModelingProjectUML::Model' -  (Class), 'ModelingProjectUML::AtkinsMandrykModel' -  (Class), 'ModelingProjectUML::BITalino' -  (Class) " />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="'ModelingProjectUML::DataWriter' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="'ModelingProjectUML::MainForm' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="'ModelingProjectUML::LiveSequencer' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="'ModelingProjectUML::Model' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="'ModelingProjectUML::AtkinsMandrykModel' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2019-11-15T07:41:52" Importance="Diagnostic" Text="'ModelingProjectUML::BITalino' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
-  <Message Timestamp="2019-11-15T07:41:53" Importance="High" Text="Génération du code terminée. Erreurs : 0. Avertissements : 0." />
+  <Message Timestamp="2019-11-19T17:28:49" Importance="High" Text="Génération du code ou transformation du texte démarrées." />
+  <Message Timestamp="2019-11-19T17:28:49" Importance="Diagnostic" Text="Nom = ClassTemplate" />
+  <Message Timestamp="2019-11-19T17:28:49" Importance="Diagnostic" Text="Remplacer = True" />
+  <Message Timestamp="2019-11-19T17:28:49" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProjectUMLLib\ModelingProjectUMLLib.csproj" />
+  <Message Timestamp="2019-11-19T17:28:49" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2019-11-19T17:28:49" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2019-11-19T17:28:49" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2019-11-19T17:28:49" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2019-11-19T17:28:49" Importance="Medium" Text="La liaison de modèle de texte 'ClassTemplate' de ModelingProjectUML appliquera ClassTemplate.t4 à 'ModelingProjectUML::LiveSequencer' -  (Class), 'ModelingProjectUML::MainForm' -  (Class), 'ModelingProjectUML::DataWriter' -  (Class), 'ModelingProjectUML::Model' -  (Class), 'ModelingProjectUML::AtkinsMandrykModel' -  (Class) " />
+  <Message Timestamp="2019-11-19T17:29:01" Importance="Medium" Text="Projet ajouté : H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\ModelingProjectUMLLib.csproj" />
+  <Message Timestamp="2019-11-19T17:29:01" Importance="Medium" Text="'ModelingProjectUML::LiveSequencer' -  (Class) : réussite (fichier remplacé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\LiveSequencer.cs" />
+  <Message Timestamp="2019-11-19T17:29:01" Importance="Medium" Text="'ModelingProjectUML::MainForm' -  (Class) : réussite (fichier remplacé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\MainForm.cs" />
+  <Message Timestamp="2019-11-19T17:29:02" Importance="Medium" Text="'ModelingProjectUML::DataWriter' -  (Class) : réussite (fichier remplacé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\DataWriter.cs" />
+  <Message Timestamp="2019-11-19T17:29:02" Importance="Medium" Text="'ModelingProjectUML::Model' -  (Class) : réussite (fichier remplacé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\Model.cs" />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Medium" Text="'ModelingProjectUML::AtkinsMandrykModel' -  (Class) : réussite (fichier remplacé) - H:\2A\Transpromo\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\ModelingProjectUMLLib\GeneratedCode\AtkinsMandrykModel.cs" />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="Nom = StructTemplate" />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="Remplacer = True" />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProjectUMLLib\ModelingProjectUMLLib.csproj" />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 14.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Medium" Text="La liaison de modèle de texte 'StructTemplate' de ModelingProjectUML appliquera StructTemplate.t4 à 'ModelingProjectUML::LiveSequencer' -  (Class), 'ModelingProjectUML::MainForm' -  (Class), 'ModelingProjectUML::DataWriter' -  (Class), 'ModelingProjectUML::Model' -  (Class), 'ModelingProjectUML::AtkinsMandrykModel' -  (Class) " />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="'ModelingProjectUML::LiveSequencer' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="'ModelingProjectUML::MainForm' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="'ModelingProjectUML::DataWriter' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="'ModelingProjectUML::Model' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="Diagnostic" Text="'ModelingProjectUML::AtkinsMandrykModel' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2019-11-19T17:29:03" Importance="High" Text="Génération du code terminée. Erreurs : 0. Avertissements : 0." />
 </Log>

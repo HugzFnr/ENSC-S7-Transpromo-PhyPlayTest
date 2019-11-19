@@ -11,19 +11,19 @@ using System.Text;
 
 public abstract class Model
 {
-	private Frames[] framesArray
+	protected virtual Frame[] framesArray
 	{
 		get;
 		set;
 	}
 
-	private double[][] dataArray
+	protected virtual short[][] dataArray
 	{
 		get;
 		set;
 	}
 
-	public virtual double timeInterval
+	public virtual byte idModel
 	{
 		get;
 		set;
@@ -45,7 +45,7 @@ public abstract class Model
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void FramesToData()
+	protected virtual void FramesToData()
 	{
 		throw new System.NotImplementedException();
 	}

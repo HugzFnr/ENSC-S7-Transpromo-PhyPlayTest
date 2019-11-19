@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainForm", "MainForm\MainFo
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingProjectUML", "ModelingProjectUML\ModelingProjectUML.modelproj", "{B68DCAEE-B73E-4E87-9050-FAC26BA239A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelingProjectUMLLib", "ModelingProjectUMLLib\ModelingProjectUMLLib.csproj", "{9E358DF4-7C27-430C-8C3D-CB584CF8E050}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B68DCAEE-B73E-4E87-9050-FAC26BA239A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B68DCAEE-B73E-4E87-9050-FAC26BA239A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B68DCAEE-B73E-4E87-9050-FAC26BA239A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E358DF4-7C27-430C-8C3D-CB584CF8E050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E358DF4-7C27-430C-8C3D-CB584CF8E050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E358DF4-7C27-430C-8C3D-CB584CF8E050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E358DF4-7C27-430C-8C3D-CB584CF8E050}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
