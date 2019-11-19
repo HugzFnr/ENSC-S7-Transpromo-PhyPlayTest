@@ -8,33 +8,68 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+/// <summary>
+/// Centralise la séquence d'acquisition en créant les différents objets :
+/// connexion au Bitalino, puis création du modèle et lien avec un nouveau datawriter
+/// </summary>
 public class LiveSequencer
 {
+    /// <summary>
+    /// Temps système de démarrage du liveSequencer
+    /// </summary>
 	public DateTime startTimer
 	{
 		get;
 		set;
 	}
 
+    /// <summary>
+    /// Temps système de fin de l'acquisition
+    /// </summary>
 	public DateTime endTimer
 	{
 		get;
 		set;
 	}
 
+    /// <summary>
+    /// Temps système de pause de l'acquisition
+    /// </summary>
+    public DateTime pauseTimer
+    {
+        get;
+        set;
+    }
+
+    /// <summary>
+    /// Temps système de reprise de l'acquisition (après pause)
+    /// </summary>
+    public DateTime resumeTimer
+    {
+        get;
+        set;
+    }
+    /// <summary>
+    /// String resumant les paramètres rentrés par l'expérimentateur (num de sujet, jeu, date)
+    /// </summary>
 	public string nomenclature
 	{
 		get;
 		set;
 	}
 
+    /// <summary>
+    /// Définit l’écart de temps entre chaque ligne du tableau récupéré du modèle en milisecondes.
+    /// Valeurs possibles : 10 ms, 100 ms, 1000 ms, 10000 ms
+    /// </summary>
 	public double timeInterval
 	{
 		get;
 		set;
 	}
-
+    /// <summary>
+    /// Id correspondant au modèle choisi par l'utilisateur
+    /// </summary>
 	public int modelChosen
 	{
 		get;
@@ -59,25 +94,56 @@ public class LiveSequencer
 		set;
 	}
 
+    /// <summary>
+    /// A assigner lors de la construction du livesequencer par le mainform
+    /// </summary>
 	public MainForm.MainForm mainForm
 	{
 		get;
 		set;
 	}
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="nomenclature"></param>
+    /// <param name="interval"></param>
+    /// <param name="idmodel"></param>
 	public LiveSequencer(string nomenclature, double interval, int idmodel)
 	{
 	}
 
+    /// <summary>
+    /// Cloture l'acquisition et lance le traitement des données par le modèle puis leur écriture.
+    /// </summary>
 	public void EndSession()
 	{
 		throw new System.NotImplementedException();
 	}
 
+    /// <summary>
+    /// Lance l'acquisition en initialisant la carte Bitalino.
+    /// </summary>
 	public void StartSession()
 	{
 		throw new System.NotImplementedException();
 	}
+
+    /// <summary>
+    /// Met en pause l'acquisition en arrêtant la carte
+    /// </summary>
+    public void PauseSession()
+    {
+        throw new System.NotImplementedException();
+    }
+    /// <summary>
+    /// Reprend l'acquisition en générant une nouvelle carte après avoir concaténé le tableau de frames
+    /// de la pré-pause sur celui de la nouvelle Bitalino
+    /// </summary>
+    public void ResumeSession()
+    {
+        throw new System.NotImplementedException();
+    }
 
 }
 
