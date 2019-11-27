@@ -29,16 +29,39 @@ namespace MainForm
                     using (StreamReader sr = new StreamReader(fichier))
                     {
                         string line;
+                        string[] tableau;
+                        List<double> EMG = new List<double>();
+                        List<double> ECG = new List<double>();
+                        List<double> EDA = new List<double>();
+
+                        int i = 0;
                         while ((line = sr.ReadLine()) != null)
                         {
-                            Console.WriteLine(line);
+                            if( i > 2)
+                            {
+                                tableau = line.Split('\t');
+                                tableau[5]=tableau[5].Replace(".", ",");
+                                //Console.WriteLine(tableau[5]);
+                                //Console.WriteLine(double.Parse(tableau[5]));
+                                EMG.Add(double.Parse(tableau[5]));
+                                ECG.Add(double.Parse(tableau[6]));
+                                EDA.Add(double.Parse(tableau[7]));
+
+                            }
+                            ++i;                            
+                        }
+                        foreach (var elem in EMG)
+                        {
+                            Console.WriteLine(elem + ", ");
                         }
                     }
                 }
+                
                 catch (Exception)
                 {
                     Console.WriteLine("The file could not be read.");
                 }
+                
             }
         }
 
