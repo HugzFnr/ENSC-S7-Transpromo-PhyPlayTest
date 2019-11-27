@@ -25,3 +25,10 @@ C:\Users\Quentin\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\De
 C:\Users\Quentin\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.csproj.CopyComplete
 C:\Users\Quentin\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.exe
 C:\Users\Quentin\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.pdb
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\MainForm.exe
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\MainForm.pdb
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\BITalino_x64.dll
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.csprojResolveAssemblyReference.cache
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.MainForm.resources
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.Properties.Resources.resources
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.csproj.GenerateResource.Cache

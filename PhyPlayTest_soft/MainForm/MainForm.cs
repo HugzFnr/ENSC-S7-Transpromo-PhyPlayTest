@@ -21,7 +21,25 @@ namespace MainForm
 
         private void button1_Click(object sender, EventArgs e) //Bouton openFile
         {
-            label1.Text = getPath();  //Récupère le path et l'affiche pour le fun ^_^
+            {
+                //label1.Text = getPath();  //Récupère le path et l'affiche pour le fun ^_^
+                string fichier = getPath();
+                try
+                {
+                    using (StreamReader sr = new StreamReader(fichier))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            Console.WriteLine(line);
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("The file could not be read.");
+                }
+            }
         }
 
         public string getPath()
