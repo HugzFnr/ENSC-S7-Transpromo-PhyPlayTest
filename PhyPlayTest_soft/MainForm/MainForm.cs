@@ -138,13 +138,19 @@ namespace MainForm
         public void ToValenceAndArousal(List<double> EMG, List<double> ECG, List<double> EDA, List<double> Valence, List<double> Arousal)
         {
 
+            int meanEMG = Mean(EMG);
+            int meanHR = Mean(ECG);
+            int meanGSR = Mean(EDA);
+            int sEMG = (int) Math.Sqrt(Var(EMG));
+            int sHR = (int)Math.Sqrt(Var(ECG));
+            int sGSR = (int)Math.Sqrt(Var(EDA));
 
             #region Input (EMG)
-            var lvEMG = new LinguisticVariable("EMG", 0, 30);
+            var lvEMG = new LinguisticVariable("EMG", 0, meanEMG+10*sEMG);
 
-            var fsLowEMG = new FuzzySet("Low", new TrapezoidalFunction(0, 5, 10));
-            var fsMidEMG = new FuzzySet("Mid", new TrapezoidalFunction(10, 15, 20));
-            var fsHighEMG = new FuzzySet("High", new TrapezoidalFunction(20, 25, 30));
+            var fsLowEMG = new FuzzySet("Low", new TrapezoidalFunction(0, meanEMG-5*sEMG, meanEMG-2*sEMG));
+            var fsMidEMG = new FuzzySet("Mid", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG +2 * sEMG));
+            var fsHighEMG = new FuzzySet("High", new TrapezoidalFunction(meanEMG + 2 * sEMG, meanEMG +5*sEMG, meanEMG + 10 * sEMG));
 
             lvEMG.AddLabel(fsLowEMG);
             lvEMG.AddLabel(fsMidEMG);
@@ -153,13 +159,13 @@ namespace MainForm
 
 
             #region Input (EDA/GSR)
-            var lvGSR = new LinguisticVariable("GSR", 0, 30);
+            var lvGSR = new LinguisticVariable("GSR", 0, meanGSR + 10 * sGSR);
 
-            var fsLowGSR = new FuzzySet("Low", new TrapezoidalFunction(0, 3, 6));
-            var fsMidLowGSR = new FuzzySet("MidLow", new TrapezoidalFunction(6, 8, 10));
-            var fsMidGSR = new FuzzySet("Mid", new TrapezoidalFunction(10, 15, 20));
-            var fsMidHighGSR = new FuzzySet("MidHigh", new TrapezoidalFunction(20, 22, 24));
-            var fsHighGSR = new FuzzySet("High", new TrapezoidalFunction(24, 27, 30));
+            var fsLowGSR = new FuzzySet("Low", new TrapezoidalFunction(0, meanEMG - 5 * sEMG, meanEMG - 2 * sEMG));
+            var fsMidLowGSR = new FuzzySet("MidLow", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG + 2 * sEMG));
+            var fsMidGSR = new FuzzySet("Mid", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG + 2 * sEMG));
+            var fsMidHighGSR = new FuzzySet("MidHigh", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG + 2 * sEMG));
+            var fsHighGSR = new FuzzySet("High", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG + 2 * sEMG));
 
             lvGSR.AddLabel(fsLowGSR);
             lvGSR.AddLabel(fsMidLowGSR);
@@ -292,9 +298,49 @@ namespace MainForm
                 Valence.Add((double)resValence);
                 Arousal.Add((double)resArousal);
             }
-
-            
             #endregion
         }
+
+        public int Mean(List<Double> liste)
+        {
+            double sum = 0;
+            for (int i = 0; i < liste.Count; ++i)
+            {
+                sum += liste[i];
+            }
+            return (int)(sum / liste.Count);
+        }
+        public int Var(List<Double> liste)
+        {
+            double mean = Mean(liste);
+            double sum = 0;
+
+            for (int i = 0; i < liste.Count; ++i)
+            {
+                sum += (liste[i]-mean)* (liste[i] - mean);
+            }
+            return (int)(sum / liste.Count);
+        }
+        public int Min(List<Double> liste)
+        {
+            double min = 0;
+            for (int i = 0; i < liste.Count; ++i)
+            {
+                if (liste[i] < min)
+                    min = liste[i];
+            }
+            return (int)(min) >= 0 ? (int)(min) : 0;
+        }
+        public int Max(List<Double> liste)
+        {
+            double max = 0;
+            for (int i = 0; i < liste.Count; ++i)
+            {
+                if (liste[i] > max)
+                    max = liste[i];
+            }
+            return (int)(max) >= 0 ? (int)(max) : 0;
+        }
+
     }
 }
