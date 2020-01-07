@@ -53,3 +53,12 @@ C:\Users\Quentin\Desktop\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainFor
 C:\Users\Quentin\Desktop\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\Shim.pdb
 C:\Users\Quentin\Desktop\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\Shim.xml
 C:\Users\Quentin\Desktop\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\obj\Debug\MainForm.csproj.CopyComplete
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\AForge.dll
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\AForge.Fuzzy.dll
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\Shim.dll
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\AForge.pdb
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\AForge.xml
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\AForge.Fuzzy.pdb
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\AForge.Fuzzy.xml
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\Shim.pdb
+C:\Users\thiba\Documents\GitHub\ENSC-S7-Transpromo-PhyPlayTest\PhyPlayTest_soft\MainForm\bin\Debug\Shim.xml
