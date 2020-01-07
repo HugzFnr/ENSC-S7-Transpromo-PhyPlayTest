@@ -59,11 +59,12 @@
             // ResLogFlou1Label
             // 
             this.ResLogFlou1Label.AutoSize = true;
-            this.ResLogFlou1Label.Location = new System.Drawing.Point(618, 109);
+            this.ResLogFlou1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResLogFlou1Label.Location = new System.Drawing.Point(565, 87);
             this.ResLogFlou1Label.Name = "ResLogFlou1Label";
-            this.ResLogFlou1Label.Size = new System.Drawing.Size(144, 20);
+            this.ResLogFlou1Label.Size = new System.Drawing.Size(569, 29);
             this.ResLogFlou1Label.TabIndex = 2;
-            this.ResLogFlou1Label.Text = "ResLogFlou1Label";
+            this.ResLogFlou1Label.Text = "Cliquer ici pour faire un calcul de Valence et Arousal";
             this.ResLogFlou1Label.Click += new System.EventHandler(this.Label2_Click);
             // 
             // MainForm
@@ -71,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(841, 430);
+            this.ClientSize = new System.Drawing.Size(1332, 430);
             this.Controls.Add(this.ResLogFlou1Label);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonOpenFile);

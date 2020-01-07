@@ -117,9 +117,9 @@ namespace MainForm
         {
             //Inputs
             List<double> EMG = new List<double>();
-            EMG.Add(1);
+            EMG.Add(3);
             List<double> ECG = new List<double>();
-            ECG.Add(1);
+            ECG.Add(2);
             List<double> EDA = new List<double>();
             EDA.Add(1);            
             //Outputs
@@ -155,11 +155,11 @@ namespace MainForm
             #region Input (EDA/GSR)
             var lvGSR = new LinguisticVariable("GSR", 0, 30);
 
-            var fsLowGSR = new FuzzySet("Low", new TrapezoidalFunction(0, 5, 10));
-            var fsMidLowGSR = new FuzzySet("MidLow", new TrapezoidalFunction(10, 15, 20));
+            var fsLowGSR = new FuzzySet("Low", new TrapezoidalFunction(0, 3, 6));
+            var fsMidLowGSR = new FuzzySet("MidLow", new TrapezoidalFunction(6, 8, 10));
             var fsMidGSR = new FuzzySet("Mid", new TrapezoidalFunction(10, 15, 20));
-            var fsMidHighGSR = new FuzzySet("MidHigh", new TrapezoidalFunction(10, 15, 20));
-            var fsHighGSR = new FuzzySet("High", new TrapezoidalFunction(20, 25, 30));
+            var fsMidHighGSR = new FuzzySet("MidHigh", new TrapezoidalFunction(20, 22, 24));
+            var fsHighGSR = new FuzzySet("High", new TrapezoidalFunction(24, 27, 30));
 
             lvGSR.AddLabel(fsLowGSR);
             lvGSR.AddLabel(fsMidLowGSR);
@@ -185,13 +185,13 @@ namespace MainForm
             #region Output (Valence)
             var lvValence = new LinguisticVariable("Valence", 0, 30);
 
-            var fsVeryLow = new FuzzySet("VeryLow", new TrapezoidalFunction(0, 5, 10));
-            var fsLow = new FuzzySet("Low", new TrapezoidalFunction(0, 5, 10));
-            var fsMidLow = new FuzzySet("MidLow", new TrapezoidalFunction(10, 15, 20));
+            var fsVeryLow = new FuzzySet("VeryLow", new TrapezoidalFunction(0, 3, 6));
+            var fsLow = new FuzzySet("Low", new TrapezoidalFunction(6, 7, 8));
+            var fsMidLow = new FuzzySet("MidLow", new TrapezoidalFunction(8, 9, 10));
             var fsMid = new FuzzySet("Mid", new TrapezoidalFunction(10, 15, 20));
-            var fsMidHigh = new FuzzySet("MidHigh", new TrapezoidalFunction(20, 25, 30));
-            var fsHigh = new FuzzySet("High", new TrapezoidalFunction(20, 25, 30));
-            var fsVeryHigh = new FuzzySet("VeryHigh", new TrapezoidalFunction(20, 25, 30));
+            var fsMidHigh = new FuzzySet("MidHigh", new TrapezoidalFunction(20, 22, 24));
+            var fsHigh = new FuzzySet("High", new TrapezoidalFunction(24, 25, 26));
+            var fsVeryHigh = new FuzzySet("VeryHigh", new TrapezoidalFunction(26, 28, 30));
 
             lvValence.AddLabel(fsVeryLow);
             lvValence.AddLabel(fsLow);
@@ -248,13 +248,12 @@ namespace MainForm
             inferenceSys.NewRule("Rule 10", "IF EMG IS Mid THEN Valence IS Low");
             //inferenceSys.NewRule("Rule 11", "IF EMGsmile IS Mid THEN Valence IS High");
             //inferenceSys.NewRule("Rule 12", "IF EMGsmile IS High THEN Valence IS very High");
-            //inferenceSys.NewRule("Rule 13", "IF EMGsmile IS Low  AND EMG IS Low  THEN Valence IS neutral");
-            //inferenceSys.NewRule("Rule 14", "IF EMGsmile IS High  AND EMG IS Low  THEN Valence IS very High");
-            //inferenceSys.NewRule("Rule 15", "IF EMGsmile IS High  AND EMG IS Mid  THEN Valence IS High");
-            //inferenceSys.NewRule("Rule 16", "IF EMGsmile IS Low  AND EMG IS High  THEN Valence IS very Low");
-            //inferenceSys.NewRule("Rule 17", "IF EMGsmile IS Mid  AND EMG IS High  THEN Valence IS Low");
-            //inferenceSys.NewRule("Rule 18", "IF EMGsmile IS Low  AND EMG IS Low  AND HR IS Low  THEN Valence IS Low");
-            //inferenceSys.NewRule("Rule 19", "IF EMGsmile IS Low  AND EMG IS Low  AND HR IS High  THEN Valence IS High");
+            inferenceSys.NewRule("Rule 14", "IF EMG IS Low  THEN Valence IS VeryHigh");
+            inferenceSys.NewRule("Rule 15", "IF EMG IS Mid  THEN Valence IS High");
+            inferenceSys.NewRule("Rule 16", "IF EMG IS High  THEN Valence IS VeryLow");
+            inferenceSys.NewRule("Rule 17", "IF EMG IS High  THEN Valence IS Low");
+            inferenceSys.NewRule("Rule 18", "IF EMG IS Low  AND HR IS Low  THEN Valence IS Low");
+            inferenceSys.NewRule("Rule 19", "IF EMG IS Low  AND HR IS High  THEN Valence IS High");
             inferenceSys.NewRule("Rule 20", "IF GSR IS High  AND HR IS Mid  THEN Arousal IS High");
             inferenceSys.NewRule("Rule 21", "IF GSR IS MidHigh  AND HR IS Mid  THEN Arousal IS MidHigh");
             inferenceSys.NewRule("Rule 22", "IF GSR IS MidLow  AND HR IS Mid  THEN Arousal IS MidLow");
