@@ -31,6 +31,7 @@
             this.buttonOpenFile = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ResLogFlou1Label = new System.Windows.Forms.Label();
+            this.ResLogFlou2Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonOpenFile
@@ -67,12 +68,24 @@
             this.ResLogFlou1Label.Text = "Cliquer ici pour faire un calcul de Valence et Arousal";
             this.ResLogFlou1Label.Click += new System.EventHandler(this.Label2_Click);
             // 
+            // ResLogFlou2Label
+            // 
+            this.ResLogFlou2Label.AutoSize = true;
+            this.ResLogFlou2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResLogFlou2Label.Location = new System.Drawing.Point(565, 144);
+            this.ResLogFlou2Label.Name = "ResLogFlou2Label";
+            this.ResLogFlou2Label.Size = new System.Drawing.Size(480, 29);
+            this.ResLogFlou2Label.TabIndex = 3;
+            this.ResLogFlou2Label.Text = "Cliquer ici pour faire un calcul des emotions";
+            this.ResLogFlou2Label.Click += new System.EventHandler(this.ResLogFlou2Label_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1332, 430);
+            this.Controls.Add(this.ResLogFlou2Label);
             this.Controls.Add(this.ResLogFlou1Label);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonOpenFile);
@@ -90,6 +103,7 @@
         private System.Windows.Forms.Button buttonOpenFile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label ResLogFlou1Label;
+        private System.Windows.Forms.Label ResLogFlou2Label;
     }
 }
 
