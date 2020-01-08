@@ -14,6 +14,14 @@ namespace MainForm
 {
     public partial class MainForm : Form
     {
+        List<double> EMG = new List<double>();
+        List<double> ECG = new List<double>();
+        List<double> EDA = new List<double>();
+
+        List<double> Valence = new List<double>();
+        List<double> Arousal = new List<double>();
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -31,9 +39,6 @@ namespace MainForm
                     {
                         string line;
                         string[] tableau;
-                        List<double> EMG = new List<double>();
-                        List<double> ECG = new List<double>();
-                        List<double> EDA = new List<double>();
 
                         int i = 0;
                         while ((line = sr.ReadLine()) != null)
@@ -116,15 +121,11 @@ namespace MainForm
         private void Label2_Click(object sender, EventArgs e)
         {
             //Inputs
-            List<double> EMG = new List<double>();
-            EMG.Add(3);
-            List<double> ECG = new List<double>();
-            ECG.Add(2);
-            List<double> EDA = new List<double>();
-            EDA.Add(1);            
+            EMG.Add(800);EMG.Add(750);
+            ECG.Add(180);ECG.Add(160);
+            EDA.Add(80);EDA.Add(73);  
             //Outputs
-            List<double> Valence = new List<double>();
-            List<double> Arousal = new List<double>();
+            
             ToValenceAndArousal(EMG, ECG, EDA, Valence, Arousal);
 
         }
@@ -138,6 +139,7 @@ namespace MainForm
         public void ToValenceAndArousal(List<double> EMG, List<double> ECG, List<double> EDA, List<double> Valence, List<double> Arousal)
         {
 
+            //Pour traitement adapté à chaque signal
             int meanEMG = Mean(EMG);
             int meanHR = Mean(ECG);
             int meanGSR = Mean(EDA);
@@ -161,11 +163,11 @@ namespace MainForm
             #region Input (EDA/GSR)
             var lvGSR = new LinguisticVariable("GSR", 0, meanGSR + 10 * sGSR);
 
-            var fsLowGSR = new FuzzySet("Low", new TrapezoidalFunction(0, meanEMG - 5 * sEMG, meanEMG - 2 * sEMG));
-            var fsMidLowGSR = new FuzzySet("MidLow", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG + 2 * sEMG));
-            var fsMidGSR = new FuzzySet("Mid", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG + 2 * sEMG));
-            var fsMidHighGSR = new FuzzySet("MidHigh", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG + 2 * sEMG));
-            var fsHighGSR = new FuzzySet("High", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG + 2 * sEMG));
+            var fsLowGSR = new FuzzySet("Low", new TrapezoidalFunction(0, meanGSR - 5 * sGSR, meanGSR - 2 * sGSR));
+            var fsMidLowGSR = new FuzzySet("MidLow", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 2 * sGSR));
+            var fsMidGSR = new FuzzySet("Mid", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 2 * sGSR));
+            var fsMidHighGSR = new FuzzySet("MidHigh", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 2 * sGSR));
+            var fsHighGSR = new FuzzySet("High", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 2 * sGSR));
 
             lvGSR.AddLabel(fsLowGSR);
             lvGSR.AddLabel(fsMidLowGSR);
@@ -176,11 +178,11 @@ namespace MainForm
 
 
             #region Input (ECG/HR)
-            var lvHR = new LinguisticVariable("HR", 0, 30);
+            var lvHR = new LinguisticVariable("HR", 0, meanHR + 10 * sHR);
 
-            var fsLowHR = new FuzzySet("Low", new TrapezoidalFunction(0, 5, 10));
-            var fsMidHR = new FuzzySet("Mid", new TrapezoidalFunction(10, 15, 20));
-            var fsHighHR = new FuzzySet("High", new TrapezoidalFunction(20, 25, 30));
+            var fsLowHR = new FuzzySet("Low", new TrapezoidalFunction(0, meanHR - 5 * sHR, meanHR - 2 * sHR));
+            var fsMidHR = new FuzzySet("Mid", new TrapezoidalFunction(meanHR - 2 * sHR, meanHR, meanHR + 2 * sHR));
+            var fsHighHR = new FuzzySet("High", new TrapezoidalFunction(meanHR + 2 * sHR, meanHR + 5 * sHR, meanHR + 10 * sHR));
 
             lvHR.AddLabel(fsLowHR);
             lvHR.AddLabel(fsMidHR);
