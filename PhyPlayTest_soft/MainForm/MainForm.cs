@@ -63,8 +63,11 @@ namespace MainForm
                                 //Console.WriteLine(tableau[5]);
                                 //Console.WriteLine(double.Parse(tableau[5]));
                                 EMG.Add(double.Parse(tableau[5]));
+                                tableau[6] = tableau[6].Replace(".", ",");
                                 ECG.Add(double.Parse(tableau[6]));
+                                tableau[7] = tableau[7].Replace(".", ",");
                                 EDA.Add(double.Parse(tableau[7]));
+
 
                             }
                             ++i;
