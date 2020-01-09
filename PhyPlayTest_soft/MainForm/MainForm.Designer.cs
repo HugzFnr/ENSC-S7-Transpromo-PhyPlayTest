@@ -88,7 +88,7 @@
             // 
             this.InfoLabel.AutoSize = true;
             this.InfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InfoLabel.Location = new System.Drawing.Point(1165, 158);
+            this.InfoLabel.Location = new System.Drawing.Point(1016, 158);
             this.InfoLabel.Name = "InfoLabel";
             this.InfoLabel.Size = new System.Drawing.Size(186, 29);
             this.InfoLabel.TabIndex = 4;
