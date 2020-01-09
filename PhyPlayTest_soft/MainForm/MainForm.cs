@@ -172,7 +172,7 @@ namespace MainForm
             #region Input (EMG)
             var lvEMG = new LinguisticVariable("EMG", meanEMG-10*sEMG, meanEMG+10*sEMG);
 
-            var fsLowEMG = new FuzzySet("Low", new TrapezoidalFunction(0, meanEMG-5*sEMG, meanEMG-2*sEMG));
+            var fsLowEMG = new FuzzySet("Low", new TrapezoidalFunction(meanEMG - 10 * sEMG, meanEMG-5*sEMG, meanEMG-2*sEMG));
             var fsMidEMG = new FuzzySet("Mid", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG +2 * sEMG));
             var fsHighEMG = new FuzzySet("High", new TrapezoidalFunction(meanEMG + 2 * sEMG, meanEMG +5*sEMG, meanEMG + 10 * sEMG));
 
