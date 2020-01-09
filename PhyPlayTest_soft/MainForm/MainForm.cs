@@ -311,8 +311,12 @@ namespace MainForm
                 {
                     resValence = inferenceSys.Evaluate("Valence");
                     resArousal = inferenceSys.Evaluate("Arousal");
+<<<<<<< HEAD
+                    ResLogFlou1Label.Text = "EMG: " + valEMG + " + GSR: " + valGSR + " + HR: " + valHR + " = Valence: " + resValence + ", Arousal: " + resArousal;
+=======
 
                     ResLogFlou1Label.Text = ""+i+"/"+EMG.Count+"_ EMG: " + valEMG + " + GSR: " + valGSR + " + HR: " + valHR + " = Valence: " + resValence + ", Arousal: " + resArousal;
+>>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
                     ResLogFlou1Label.Refresh();
                     //Stockage des résultats dans la liste adéquate au résultat
                     Valence.Add((double)resValence);
@@ -324,7 +328,11 @@ namespace MainForm
                     Valence.Add(-1);
                     Arousal.Add(-1);
                 }
+<<<<<<< HEAD
+
+=======
                 
+>>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
             }
             #endregion
         }
@@ -552,7 +560,11 @@ namespace MainForm
             inferenceSys.NewRule("Rule 81", "IF Arousal IS VeryHigh AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 82", "IF Arousal IS High AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 83", "IF Arousal IS MidHigh AND Valence IS VeryHigh THEN Excitement IS High");
+<<<<<<< HEAD
+            inferenceSys.NewRule("Rule 83b", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
+=======
             inferenceSys.NewRule("Rule 83b","IF Arousal IS MidLow THEN Excitement IS VeryLow");
+>>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
             inferenceSys.NewRule("Rule 84", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 85", "IF Arousal IS Low THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 86", "IF Arousal IS VeryLow THEN Excitement IS VeryLow");
@@ -590,8 +602,12 @@ namespace MainForm
                     resExcitement = inferenceSys.Evaluate("Excitement");
                     resFrustration = inferenceSys.Evaluate("Frustration");
                     resFun = inferenceSys.Evaluate("Fun");
+<<<<<<< HEAD
+                    ResLogFlou2Label.Text = "Valence: " + valValence + " + Arousal: " + valArousal + " = Boredom: " + resBoredom + ", Challenge: " + resChallenge + ", Excitement: " + resExcitement + ", Frustration: " + resFrustration + ", Fun: " + resFun;
+=======
 
                     ResLogFlou2Label.Text = ""+i+"/"+Valence.Count+"_ Valence: " + valValence + " + Arousal: " + valArousal + " = Boredom: " + resBoredom + ", Challenge: " + resChallenge + ", Excitement: " + resExcitement + ", Frustration: " + resFrustration + ", Fun: " + resFun;
+>>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
                     ResLogFlou2Label.Refresh();
                     //Stockage des résultats dans la liste adéquate au résultat
                     Boredom.Add((double)resBoredom);
@@ -609,6 +625,10 @@ namespace MainForm
                     Frustration.Add(0);
                     Fun.Add(0);
                 }
+<<<<<<< HEAD
+                DataWriter(Boredom, Challenge, Excitement, Frustration, Fun);
+=======
+>>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
             }
             #endregion
         }
