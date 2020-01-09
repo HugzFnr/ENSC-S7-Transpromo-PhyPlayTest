@@ -64,9 +64,9 @@ namespace MainForm
                                 //Console.WriteLine(double.Parse(tableau[5]));
                                 EMG.Add(double.Parse(tableau[5]));
                                 tableau[6] = tableau[6].Replace(".", ",");
-                                ECG.Add(double.Parse(tableau[6]));
+                                EDA.Add(double.Parse(tableau[6]));
                                 tableau[7] = tableau[7].Replace(".", ",");
-                                EDA.Add(double.Parse(tableau[7]));
+                                ECG.Add(double.Parse(tableau[7]));
 
 
                             }
@@ -550,7 +550,7 @@ namespace MainForm
             inferenceSys.NewRule("Rule 81", "IF Arousal IS VeryHigh AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 82", "IF Arousal IS High AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 83", "IF Arousal IS MidHigh AND Valence IS VeryHigh THEN Excitement IS High");
-            inferenceSys.NewRule("Rule 83b", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
+            inferenceSys.NewRule("Rule 83b","IF Arousal IS MidLow THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 84", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 85", "IF Arousal IS Low THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 86", "IF Arousal IS VeryLow THEN Excitement IS VeryLow");
@@ -588,19 +588,26 @@ namespace MainForm
                     resExcitement = inferenceSys.Evaluate("Excitement");
                     resFrustration = inferenceSys.Evaluate("Frustration");
                     resFun = inferenceSys.Evaluate("Fun");
+
+                    ResLogFlou2Label.Text = "Valence: " + valValence + " + Arousal: " + valArousal + " = Boredom: " + resBoredom + ", Challenge: " + resChallenge + ", Excitement: " + resExcitement + ", Frustration: " + resFrustration + ", Fun: " + resFun;
+                    ResLogFlou2Label.Refresh();
+                    //Stockage des résultats dans la liste adéquate au résultat
+                    Boredom.Add((double)resBoredom);
+                    Challenge.Add((double)resChallenge);
+                    Excitement.Add((double)resExcitement);
+                    Frustration.Add((double)resFrustration);
+                    Fun.Add((double)resFun);
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception(string.Format("Erreur : {0}", ex.Message));
+                    //throw new Exception(string.Format("Erreur : {0}", ex.Message));
+                    Boredom.Add(0);
+                    Challenge.Add(0);
+                    Excitement.Add(0);
+                    Frustration.Add(0);
+                    Fun.Add(0);
                 }
-                ResLogFlou2Label.Text = "Valence: " + valValence + " + Arousal: " + valArousal + " = Boredom: " + resBoredom + ", Challenge: " + resChallenge + ", Excitement: "+resExcitement+", Frustration: "+resFrustration+", Fun: "+resFun;
-                ResLogFlou2Label.Refresh();
-                //Stockage des résultats dans la liste adéquate au résultat
-                Boredom.Add((double)resBoredom);
-                Challenge.Add((double)resChallenge);
-                Excitement.Add((double)resExcitement);
-                Frustration.Add((double)resFrustration);
-                Fun.Add((double)resFun);
+                
             }
             #endregion
         }
