@@ -551,7 +551,7 @@ namespace MainForm
             inferenceSys.NewRule("Rule 82", "IF Arousal IS High AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 83", "IF Arousal IS MidHigh AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 83b", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
-            inferenceSys.NewRule("Rule 83b","IF Arousal IS MidLow THEN Excitement IS VeryLow");
+            inferenceSys.NewRule("Rule 83c","IF Arousal IS MidLow THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 84", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 85", "IF Arousal IS Low THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 86", "IF Arousal IS VeryLow THEN Excitement IS VeryLow");
@@ -592,7 +592,6 @@ namespace MainForm
                     ResLogFlou2Label.Text = ""+i+"/"+Valence.Count+"_ Valence: " + valValence + " + Arousal: " + 
                         valArousal + " = Boredom: " + resBoredom + ", Challenge: " + resChallenge + ", Excitement: " + 
                         resExcitement + ", Frustration: " + resFrustration + ", Fun: " + resFun;
-
                     ResLogFlou2Label.Refresh();
                     //Stockage des résultats dans la liste adéquate au résultat
                     Boredom.Add((double)resBoredom);
