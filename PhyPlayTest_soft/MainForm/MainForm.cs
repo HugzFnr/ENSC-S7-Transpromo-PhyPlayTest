@@ -331,6 +331,8 @@ namespace MainForm
 
         public void FromValenceArousalToEmotions(List<double> Valence, List<double> Arousal)
         {
+            ResLogFlou2Label.Text = "Traitement en cours";
+            ResLogFlou2Label.Refresh();
             //OK ne pas toucher
             #region Input (Valence)
             var lvValence = new LinguisticVariable("Valence", 0, 30);
@@ -589,7 +591,7 @@ namespace MainForm
                     resFrustration = inferenceSys.Evaluate("Frustration");
                     resFun = inferenceSys.Evaluate("Fun");
 
-                    ResLogFlou2Label.Text = "Valence: " + valValence + " + Arousal: " + valArousal + " = Boredom: " + resBoredom + ", Challenge: " + resChallenge + ", Excitement: " + resExcitement + ", Frustration: " + resFrustration + ", Fun: " + resFun;
+                    ResLogFlou2Label.Text = ""+i+"/"+Valence.Count+"_ Valence: " + valValence + " + Arousal: " + valArousal + " = Boredom: " + resBoredom + ", Challenge: " + resChallenge + ", Excitement: " + resExcitement + ", Frustration: " + resFrustration + ", Fun: " + resFun;
                     ResLogFlou2Label.Refresh();
                     //Stockage des résultats dans la liste adéquate au résultat
                     Boredom.Add((double)resBoredom);
@@ -607,7 +609,6 @@ namespace MainForm
                     Frustration.Add(0);
                     Fun.Add(0);
                 }
-                
             }
             #endregion
         }
@@ -690,6 +691,11 @@ namespace MainForm
         private void ResLogFlou2Label_Click(object sender, EventArgs e)
         {
             FromValenceArousalToEmotions(Valence, Arousal);
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            DataWriter(Boredom, Challenge, Excitement, Frustration, Fun);
         }
     }
 }
