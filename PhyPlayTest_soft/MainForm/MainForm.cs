@@ -582,7 +582,32 @@ namespace MainForm
             #endregion
         }
 
+        public static void DataWriter(List<double> List)
+        {
+            try
+            {
+                string fichierCible = "PhyPlayTest.txt";
+                string emotion_name = nameof(List);
 
+                //Création d'une instance de StreamWriter pour permettre l'ecriture de notre fichier cible
+                //StreamWriter monStreamWriter = new StreamWriter(fichierCible);
+                StreamWriter myStreamWriter = File.AppendText(fichierCible);
+                for(int i = 0; i < List.Count(); i++)
+                {
+                    myStreamWriter.WriteLine(String.Format("{0}, {1}, {2}", index, emotion_name,List.First()));
+                    List.Remove(List.First());
+                }
+                
+                //Fermeture du StreamWriter 
+                myStreamWriter.Close();
+            }
+            catch (Exception ex)
+            {
+                // Code exécuté en cas d'exception 
+                Console.Write("Une erreur est survenue au cours de l'opération :");
+                Console.WriteLine(ex.Message);
+            }
+        }
 
 
         public int Mean(List<Double> liste)
