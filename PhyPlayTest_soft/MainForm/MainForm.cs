@@ -185,11 +185,11 @@ namespace MainForm
             #region Input (EDA/GSR)
             var lvGSR = new LinguisticVariable("GSR", meanGSR - 10 * sGSR, meanGSR + 10 * sGSR);
 
-            var fsLowGSR = new FuzzySet("Low", new TrapezoidalFunction(0, meanGSR - 5 * sGSR, meanGSR - 2 * sGSR));
+            var fsLowGSR = new FuzzySet("Low", new TrapezoidalFunction(meanGSR - 10 * sGSR, meanGSR - 5 * sGSR, meanGSR - 2 * sGSR));
             var fsMidLowGSR = new FuzzySet("MidLow", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 2 * sGSR));
             var fsMidGSR = new FuzzySet("Mid", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 2 * sGSR));
             var fsMidHighGSR = new FuzzySet("MidHigh", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 2 * sGSR));
-            var fsHighGSR = new FuzzySet("High", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 2 * sGSR));
+            var fsHighGSR = new FuzzySet("High", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 10 * sGSR));
 
             lvGSR.AddLabel(fsLowGSR);
             lvGSR.AddLabel(fsMidLowGSR);
@@ -202,7 +202,7 @@ namespace MainForm
             #region Input (ECG/HR)
             var lvHR = new LinguisticVariable("HR", meanHR - 10 * sHR, meanHR + 10 * sHR);
 
-            var fsLowHR = new FuzzySet("Low", new TrapezoidalFunction(0, meanHR - 5 * sHR, meanHR - 2 * sHR));
+            var fsLowHR = new FuzzySet("Low", new TrapezoidalFunction(meanHR - 10 * sHR, meanHR - 5 * sHR, meanHR - 2 * sHR));
             var fsMidHR = new FuzzySet("Mid", new TrapezoidalFunction(meanHR - 2 * sHR, meanHR, meanHR + 2 * sHR));
             var fsHighHR = new FuzzySet("High", new TrapezoidalFunction(meanHR + 2 * sHR, meanHR + 5 * sHR, meanHR + 10 * sHR));
 
