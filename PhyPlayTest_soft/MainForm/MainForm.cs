@@ -311,12 +311,8 @@ namespace MainForm
                 {
                     resValence = inferenceSys.Evaluate("Valence");
                     resArousal = inferenceSys.Evaluate("Arousal");
-<<<<<<< HEAD
-                    ResLogFlou1Label.Text = "EMG: " + valEMG + " + GSR: " + valGSR + " + HR: " + valHR + " = Valence: " + resValence + ", Arousal: " + resArousal;
-=======
 
                     ResLogFlou1Label.Text = ""+i+"/"+EMG.Count+"_ EMG: " + valEMG + " + GSR: " + valGSR + " + HR: " + valHR + " = Valence: " + resValence + ", Arousal: " + resArousal;
->>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
                     ResLogFlou1Label.Refresh();
                     //Stockage des résultats dans la liste adéquate au résultat
                     Valence.Add((double)resValence);
@@ -325,25 +321,26 @@ namespace MainForm
                 catch (Exception ex)
                 {
                     //throw new Exception(string.Format("Erreur : {0}", ex.Message));
-                    Valence.Add(-1);
-                    Arousal.Add(-1);
+                    Valence.Add(0);
+                    Arousal.Add(0);
                 }
-<<<<<<< HEAD
-
-=======
-                
->>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
             }
             #endregion
         }
 
         public void FromValenceArousalToEmotions(List<double> Valence, List<double> Arousal)
         {
+
+            int meanValence = Mean(Valence);
+            int meanArousal = Mean(Arousal);
+            int sValence = (int)Math.Sqrt(Var(Valence))+1;
+            int sArousal = (int)Math.Sqrt(Var(Arousal))+1;
+
             ResLogFlou2Label.Text = "Traitement en cours";
             ResLogFlou2Label.Refresh();
             //OK ne pas toucher
             #region Input (Valence)
-            var lvValence = new LinguisticVariable("Valence", 0, 30);
+            var lvValence = new LinguisticVariable("Valence", meanValence- 10*sValence, meanValence+10*sValence);
 
             var fsVeryLow = new FuzzySet("VeryLow", new TrapezoidalFunction(0, 3, 6));
             var fsLow = new FuzzySet("Low", new TrapezoidalFunction(6, 7, 8));
@@ -353,24 +350,37 @@ namespace MainForm
             var fsHigh = new FuzzySet("High", new TrapezoidalFunction(24, 25, 26));
             var fsVeryHigh = new FuzzySet("VeryHigh", new TrapezoidalFunction(26, 28, 30));
 
-            lvValence.AddLabel(fsVeryLow);
-            lvValence.AddLabel(fsLow);
-            lvValence.AddLabel(fsMidLow);
-            lvValence.AddLabel(fsMid);
-            lvValence.AddLabel(fsMidHigh);
-            lvValence.AddLabel(fsHigh);
-            lvValence.AddLabel(fsVeryHigh);
+            var fsVeryLowValence = new FuzzySet("VeryLow", new TrapezoidalFunction(meanValence - 10 * sValence, meanValence - 8 * sValence, meanValence - 5 * sValence));
+            var fsLowValence = new FuzzySet("Low", new TrapezoidalFunction(meanValence - 5 * sValence, meanValence - 4 * sValence, meanValence - 3 * sValence));
+            var fsMidLowValence = new FuzzySet("MidLow", new TrapezoidalFunction(meanValence - 3 * sValence, meanValence - 2 * sValence, meanValence));
+            var fsMidHighValence = new FuzzySet("MidHigh", new TrapezoidalFunction(meanValence, meanValence+2*sValence, meanValence + 3 * sValence));
+            var fsHighValence = new FuzzySet("High", new TrapezoidalFunction(meanValence +3* sValence, meanValence+4*sValence, meanValence + 5 * sValence));
+            var fsVeryHighValence = new FuzzySet("VeryHigh", new TrapezoidalFunction(meanValence + 5 * sValence, meanValence + 8 * sValence, meanValence + 10 * sValence));
+            
+
+            lvValence.AddLabel(fsVeryLowValence);
+            lvValence.AddLabel(fsLowValence);
+            lvValence.AddLabel(fsMidLowValence);
+            lvValence.AddLabel(fsMidHighValence);
+            lvValence.AddLabel(fsHighValence);
+            lvValence.AddLabel(fsVeryHighValence);
             #endregion
             #region Input (Arousal)
-            var lvArousal = new LinguisticVariable("Arousal", 0, 30);
+            var lvArousal = new LinguisticVariable("Arousal", meanArousal-10*sArousal, meanArousal+10*sArousal);
 
-            lvArousal.AddLabel(fsVeryLow);
-            lvArousal.AddLabel(fsLow);
-            lvArousal.AddLabel(fsMidLow);
-            lvArousal.AddLabel(fsMid);
-            lvArousal.AddLabel(fsMidHigh);
-            lvArousal.AddLabel(fsHigh);
-            lvArousal.AddLabel(fsVeryHigh);
+            var fsVeryLowArousal = new FuzzySet("VeryLow", new TrapezoidalFunction(meanArousal - 10 * sArousal, meanArousal - 8 * sArousal, meanArousal - 5 * sArousal));
+            var fsLowArousal = new FuzzySet("Low", new TrapezoidalFunction(meanArousal - 5 * sArousal, meanArousal - 4 * sArousal, meanArousal - 3 * sArousal));
+            var fsMidLowArousal = new FuzzySet("MidLow", new TrapezoidalFunction(meanArousal - 3 * sArousal, meanArousal - 2 * sArousal, meanArousal ));
+            var fsMidHighArousal = new FuzzySet("MidHigh", new TrapezoidalFunction(meanArousal, meanArousal + 2 * sArousal, meanArousal + 3 * sArousal));
+            var fsHighArousal = new FuzzySet("High", new TrapezoidalFunction(meanArousal + 3 * sArousal, meanArousal + 4 * sArousal, meanArousal + 5 * sArousal));
+            var fsVeryHighArousal = new FuzzySet("VeryHigh", new TrapezoidalFunction(meanArousal + 5 * sArousal, meanArousal + 8 * sArousal, meanArousal + 10 * sArousal));
+
+            lvArousal.AddLabel(fsVeryLowArousal);
+            lvArousal.AddLabel(fsLowArousal);
+            lvArousal.AddLabel(fsMidLowArousal);
+            lvArousal.AddLabel(fsMidHighArousal);
+            lvArousal.AddLabel(fsHighArousal);
+            lvArousal.AddLabel(fsVeryHighArousal);
             #endregion
 
 
@@ -560,11 +570,7 @@ namespace MainForm
             inferenceSys.NewRule("Rule 81", "IF Arousal IS VeryHigh AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 82", "IF Arousal IS High AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 83", "IF Arousal IS MidHigh AND Valence IS VeryHigh THEN Excitement IS High");
-<<<<<<< HEAD
             inferenceSys.NewRule("Rule 83b", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
-=======
-            inferenceSys.NewRule("Rule 83b","IF Arousal IS MidLow THEN Excitement IS VeryLow");
->>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
             inferenceSys.NewRule("Rule 84", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 85", "IF Arousal IS Low THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 86", "IF Arousal IS VeryLow THEN Excitement IS VeryLow");
@@ -578,7 +584,7 @@ namespace MainForm
 
             #region Exemple
             //Pour toutes les valeurs des listes
-            float valValence = -1, valArousal = -1;
+            float valValence = -1f, valArousal = -1f;
             for (int i = 0; i < Valence.Count; i++)
             {
                 valValence = (float)Valence[i];
@@ -602,13 +608,10 @@ namespace MainForm
                     resExcitement = inferenceSys.Evaluate("Excitement");
                     resFrustration = inferenceSys.Evaluate("Frustration");
                     resFun = inferenceSys.Evaluate("Fun");
-<<<<<<< HEAD
-                    ResLogFlou2Label.Text = "Valence: " + valValence + " + Arousal: " + valArousal + " = Boredom: " + resBoredom + ", Challenge: " + resChallenge + ", Excitement: " + resExcitement + ", Frustration: " + resFrustration + ", Fun: " + resFun;
-=======
 
                     ResLogFlou2Label.Text = ""+i+"/"+Valence.Count+"_ Valence: " + valValence + " + Arousal: " + valArousal + " = Boredom: " + resBoredom + ", Challenge: " + resChallenge + ", Excitement: " + resExcitement + ", Frustration: " + resFrustration + ", Fun: " + resFun;
->>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
                     ResLogFlou2Label.Refresh();
+
                     //Stockage des résultats dans la liste adéquate au résultat
                     Boredom.Add((double)resBoredom);
                     Challenge.Add((double)resChallenge);
@@ -618,6 +621,8 @@ namespace MainForm
                 }
                 catch (Exception ex)
                 {
+                    ResLogFlou2Label.Text = "" + i;
+                    ResLogFlou2Label.Refresh();
                     throw new Exception(string.Format("Erreur : {0}", ex.Message));
                     Boredom.Add(0);
                     Challenge.Add(0);
@@ -625,10 +630,7 @@ namespace MainForm
                     Frustration.Add(0);
                     Fun.Add(0);
                 }
-<<<<<<< HEAD
                 DataWriter(Boredom, Challenge, Excitement, Frustration, Fun);
-=======
->>>>>>> 391c966b9bcdbbe7fcbc8f230d36366110579f10
             }
             #endregion
         }
@@ -642,6 +644,7 @@ namespace MainForm
                 //Création d'une instance de StreamWriter pour permettre l'ecriture de notre fichier cible
                 //StreamWriter monStreamWriter = new StreamWriter(fichierCible);
                 StreamWriter myStreamWriter = File.AppendText(fichierCible);
+                myStreamWriter.WriteLine(String.Format("Scores scale from 0 to 30"));
                 myStreamWriter.WriteLine(String.Format("Time(ms), Boredom, Challenge, Excitement, Frustration, Fun"));
 
                 for (int i = 0; i < Boredom.Count(); i++)
