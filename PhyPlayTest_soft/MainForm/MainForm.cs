@@ -602,7 +602,7 @@ namespace MainForm
                 }
                 catch (Exception ex)
                 {
-                    //throw new Exception(string.Format("Erreur : {0}", ex.Message));
+                    throw new Exception(string.Format("Erreur : {0}", ex.Message));
                     Boredom.Add(0);
                     Challenge.Add(0);
                     Excitement.Add(0);
