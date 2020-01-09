@@ -582,20 +582,26 @@ namespace MainForm
             #endregion
         }
 
-        public static void DataWriter(List<double> List)
+        public static void DataWriter(List<double> Boredom, List<double> Challenge, List<double> Excitement, List<double> Frustration, List<double> Fun )
         {
             try
             {
                 string fichierCible = "PhyPlayTest.txt";
-                string emotion_name = nameof(List);
 
                 //Création d'une instance de StreamWriter pour permettre l'ecriture de notre fichier cible
                 //StreamWriter monStreamWriter = new StreamWriter(fichierCible);
                 StreamWriter myStreamWriter = File.AppendText(fichierCible);
-                for(int i = 0; i < List.Count(); i++)
+                myStreamWriter.WriteLine(String.Format("Time(ms), Boredom, Challenge, Excitement, Frustration, Fun"));
+
+                for (int i = 0; i < Boredom.Count(); i++)
                 {
-                    myStreamWriter.WriteLine(String.Format("{0}, {1}, {2}", index, emotion_name,List.First()));
-                    List.Remove(List.First());
+                    myStreamWriter.WriteLine(String.Format( "{0}, {1}, {2}, {3}, {4}, {5}",
+                        i+1, Boredom.First(), Challenge.First(), Excitement.First(), Frustration.First(), Fun.First()));
+                    Boredom.Remove(Boredom.First());
+                    Challenge.Remove(Boredom.First());
+                    Excitement.Remove(Boredom.First());
+                    Frustration.Remove(Boredom.First());
+                    Fun.Remove(Boredom.First());
                 }
                 
                 //Fermeture du StreamWriter 
