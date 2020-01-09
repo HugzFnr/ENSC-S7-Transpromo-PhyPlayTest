@@ -56,6 +56,8 @@ namespace MainForm
                             {
                                 tableau = line.Split('\t');
                                 tableau[5]=tableau[5].Replace(".", ",");
+                                tableau[6] = tableau[6].Replace(".", ",");
+                                tableau[7] = tableau[7].Replace(".", ",");
                                 //Console.WriteLine(tableau[5]);
                                 //Console.WriteLine(double.Parse(tableau[5]));
                                 EMG.Add(double.Parse(tableau[5]));
@@ -65,10 +67,10 @@ namespace MainForm
                             }
                             ++i;                            
                         }
-                        foreach (var elem in EMG)
-                        {
-                            Console.WriteLine(elem + ", ");
-                        }
+                        //foreach (var elem in EMG)
+                        //{
+                        //    Console.WriteLine(elem + ", ");
+                        //}
                     }
                 }
                 
@@ -130,9 +132,9 @@ namespace MainForm
         private void Label2_Click(object sender, EventArgs e)
         {
             //Inputs
-            EMG.Add(800);EMG.Add(750);
-            ECG.Add(180);ECG.Add(160);
-            EDA.Add(80);EDA.Add(73);  
+            //EMG.Add(800);EMG.Add(750);
+            //ECG.Add(180);ECG.Add(160);
+            //EDA.Add(80);EDA.Add(73);  
             //Outputs
             
             ToValenceAndArousal(EMG, ECG, EDA, Valence, Arousal);
@@ -157,7 +159,7 @@ namespace MainForm
             int sGSR = (int)Math.Sqrt(Var(EDA));
 
             #region Input (EMG)
-            var lvEMG = new LinguisticVariable("EMG", 0, meanEMG+10*sEMG);
+            var lvEMG = new LinguisticVariable("EMG", meanEMG-10*sEMG, meanEMG+10*sEMG);
 
             var fsLowEMG = new FuzzySet("Low", new TrapezoidalFunction(0, meanEMG-5*sEMG, meanEMG-2*sEMG));
             var fsMidEMG = new FuzzySet("Mid", new TrapezoidalFunction(meanEMG - 2 * sEMG, meanEMG, meanEMG +2 * sEMG));
@@ -170,7 +172,7 @@ namespace MainForm
 
 
             #region Input (EDA/GSR)
-            var lvGSR = new LinguisticVariable("GSR", 0, meanGSR + 10 * sGSR);
+            var lvGSR = new LinguisticVariable("GSR", meanGSR - 10 * sGSR, meanGSR + 10 * sGSR);
 
             var fsLowGSR = new FuzzySet("Low", new TrapezoidalFunction(0, meanGSR - 5 * sGSR, meanGSR - 2 * sGSR));
             var fsMidLowGSR = new FuzzySet("MidLow", new TrapezoidalFunction(meanGSR - 2 * sGSR, meanGSR, meanGSR + 2 * sGSR));
@@ -187,7 +189,7 @@ namespace MainForm
 
 
             #region Input (ECG/HR)
-            var lvHR = new LinguisticVariable("HR", 0, meanHR + 10 * sHR);
+            var lvHR = new LinguisticVariable("HR", meanHR - 10 * sHR, meanHR + 10 * sHR);
 
             var fsLowHR = new FuzzySet("Low", new TrapezoidalFunction(0, meanHR - 5 * sHR, meanHR - 2 * sHR));
             var fsMidHR = new FuzzySet("Mid", new TrapezoidalFunction(meanHR - 2 * sHR, meanHR, meanHR + 2 * sHR));
@@ -405,7 +407,7 @@ namespace MainForm
             lvExcitement.AddLabel(fsHigh);
             lvExcitement.AddLabel(fsVeryHigh);
             #endregion
-            #region Output (Frustation)
+            #region Output (Frustration)
             var lvFrustration = new LinguisticVariable("Frustration", 0, 30);
 
             //var fsVeryLow = new FuzzySet("VeryLow", new TrapezoidalFunction(0, 3, 6));
@@ -498,10 +500,14 @@ namespace MainForm
             inferenceSys.NewRule("Rule 54", "IF Valence IS VeryHigh THEN Challenge IS VeryLow");
             inferenceSys.NewRule("Rule 54b","IF Valence IS VeryHigh THEN Boredom IS VeryLow ");
             inferenceSys.NewRule("Rule 54c","IF Valence IS VeryHigh THEN Frustration IS VeryLow ");
-            inferenceSys.NewRule("Rule 55", "IF Valence IS MidHigh THEN Boredom IS VeryLow AND Frustration IS VeryLow");
-            inferenceSys.NewRule("Rule 56", "IF Arousal IS VeryLow THEN Challenge IS VeryLow AND Frustration IS VeryLow");
-            inferenceSys.NewRule("Rule 57", "IF Arousal IS Low THEN Challenge IS VeryLow AND Frustration IS VeryLow");
-            inferenceSys.NewRule("Rule 58", "IF Arousal IS MidLow THEN Challenge IS VeryLow AND Frustration IS VeryLow");
+            inferenceSys.NewRule("Rule 55", "IF Valence IS MidHigh THEN Boredom IS VeryLow");
+            inferenceSys.NewRule("Rule 55b", "IF Valence IS MidHigh THEN Frustration IS VeryLow");
+            inferenceSys.NewRule("Rule 56", "IF Arousal IS VeryLow THEN Challenge IS VeryLow");
+            inferenceSys.NewRule("Rule 56b", "IF Arousal IS VeryLow THEN Frustration IS VeryLow");
+            inferenceSys.NewRule("Rule 57", "IF Arousal IS Low THEN Challenge IS VeryLow");
+            inferenceSys.NewRule("Rule 57b", "IF Arousal IS Low THEN Frustration IS VeryLow");
+            inferenceSys.NewRule("Rule 58", "IF Arousal IS MidLow THEN Challenge IS VeryLow");
+            inferenceSys.NewRule("Rule 58b", "IF Arousal IS MidLow THEN Frustration IS VeryLow");
             inferenceSys.NewRule("Rule 59", "IF Arousal IS MidHigh THEN Boredom IS VeryLow");
             inferenceSys.NewRule("Rule 60", "IF Arousal IS High THEN Boredom IS VeryLow");
             inferenceSys.NewRule("Rule 61", "IF Arousal IS VeryHigh THEN Boredom IS VeryLow");
