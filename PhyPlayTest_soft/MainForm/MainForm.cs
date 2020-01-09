@@ -311,16 +311,20 @@ namespace MainForm
                 {
                     resValence = inferenceSys.Evaluate("Valence");
                     resArousal = inferenceSys.Evaluate("Arousal");
+
+                    ResLogFlou1Label.Text = ""+i+"/"+EMG.Count+"_ EMG: " + valEMG + " + GSR: " + valGSR + " + HR: " + valHR + " = Valence: " + resValence + ", Arousal: " + resArousal;
+                    ResLogFlou1Label.Refresh();
+                    //Stockage des résultats dans la liste adéquate au résultat
+                    Valence.Add((double)resValence);
+                    Arousal.Add((double)resArousal);
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception(string.Format("Erreur : {0}", ex.Message));
+                    //throw new Exception(string.Format("Erreur : {0}", ex.Message));
+                    Valence.Add(-1);
+                    Arousal.Add(-1);
                 }
-                ResLogFlou1Label.Text="EMG: "+ valEMG+" + GSR: "+ valGSR + " + HR: "+ valHR + " = Valence: "+ resValence + ", Arousal: "+ resArousal;
-                ResLogFlou1Label.Refresh();
-                //Stockage des résultats dans la liste adéquate au résultat
-                Valence.Add((double)resValence);
-                Arousal.Add((double)resArousal);
+                
             }
             #endregion
         }
@@ -507,7 +511,9 @@ namespace MainForm
             inferenceSys.NewRule("Rule 50", "IF Arousal IS VeryHigh AND Valence IS MidLow THEN Frustration IS High");
             inferenceSys.NewRule("Rule 51", "IF Arousal IS VeryLow AND Valence IS VeryLow THEN Challenge IS VeryLow");
             inferenceSys.NewRule("Rule 52", "IF Arousal IS Low AND Valence IS VeryLow THEN Challenge IS VeryLow");
-            inferenceSys.NewRule("Rule 53", "IF Valence IS High THEN Challenge IS VeryLow THEN Boredom IS VeryLow THEN Frustration IS VeryLow");
+            inferenceSys.NewRule("Rule 53", "IF Valence IS High THEN Challenge IS VeryLow");
+            inferenceSys.NewRule("Rule 53b", "IF Valence IS High THEN Boredom IS VeryLow");
+            inferenceSys.NewRule("Rule 53c", "IF Valence IS High THEN Frustration IS VeryLow");
             inferenceSys.NewRule("Rule 54", "IF Valence IS VeryHigh THEN Challenge IS VeryLow");
             inferenceSys.NewRule("Rule 54b","IF Valence IS VeryHigh THEN Boredom IS VeryLow ");
             inferenceSys.NewRule("Rule 54c","IF Valence IS VeryHigh THEN Frustration IS VeryLow ");
@@ -544,7 +550,7 @@ namespace MainForm
             inferenceSys.NewRule("Rule 81", "IF Arousal IS VeryHigh AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 82", "IF Arousal IS High AND Valence IS VeryHigh THEN Excitement IS High");
             inferenceSys.NewRule("Rule 83", "IF Arousal IS MidHigh AND Valence IS VeryHigh THEN Excitement IS High");
-            inferenceSys.NewRule("Rule 83", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
+            inferenceSys.NewRule("Rule 83b", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 84", "IF Arousal IS MidLow THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 85", "IF Arousal IS Low THEN Excitement IS VeryLow");
             inferenceSys.NewRule("Rule 86", "IF Arousal IS VeryLow THEN Excitement IS VeryLow");
