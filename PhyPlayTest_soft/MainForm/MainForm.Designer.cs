@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ResLogFlou1Label = new System.Windows.Forms.Label();
             this.ResLogFlou2Label = new System.Windows.Forms.Label();
+            this.InfoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonOpenFile
@@ -79,12 +80,23 @@
             this.ResLogFlou2Label.Text = "Cliquer ici pour faire un calcul des emotions";
             this.ResLogFlou2Label.Click += new System.EventHandler(this.ResLogFlou2Label_Click);
             // 
+            // InfoLabel
+            // 
+            this.InfoLabel.AutoSize = true;
+            this.InfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InfoLabel.Location = new System.Drawing.Point(189, 375);
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(186, 29);
+            this.InfoLabel.TabIndex = 4;
+            this.InfoLabel.Text = "Ouvrez le fichier";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1332, 430);
+            this.Controls.Add(this.InfoLabel);
             this.Controls.Add(this.ResLogFlou2Label);
             this.Controls.Add(this.ResLogFlou1Label);
             this.Controls.Add(this.label1);
@@ -104,6 +116,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label ResLogFlou1Label;
         private System.Windows.Forms.Label ResLogFlou2Label;
+        private System.Windows.Forms.Label InfoLabel;
     }
 }
 

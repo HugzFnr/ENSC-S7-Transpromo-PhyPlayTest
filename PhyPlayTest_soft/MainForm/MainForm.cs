@@ -40,6 +40,8 @@ namespace MainForm
         private void button1_Click(object sender, EventArgs e) //Bouton openFile
         {
             {
+                InfoLabel.Text = "Chargement en cours du fichier";
+                InfoLabel.Refresh();
                 //label1.Text = getPath();  //Récupère le path et l'affiche pour le fun ^_^
                 string fichier = getPath();
                 try
@@ -65,12 +67,16 @@ namespace MainForm
                                 EDA.Add(double.Parse(tableau[7]));
 
                             }
-                            ++i;                            
+                            ++i;
+                            InfoLabel.Text = "Chargement en cours du fichier "+i;
+                            InfoLabel.Refresh();
                         }
                         //foreach (var elem in EMG)
                         //{
                         //    Console.WriteLine(elem + ", ");
                         //}
+                        InfoLabel.Text = "Chargement terminé : ECG,EDA et EMG récoltés";
+                        InfoLabel.Refresh();
                     }
                 }
                 
@@ -150,6 +156,8 @@ namespace MainForm
         public void ToValenceAndArousal(List<double> EMG, List<double> ECG, List<double> EDA, List<double> Valence, List<double> Arousal)
         {
 
+            ResLogFlou1Label.Text = "Traitement en cours";
+            ResLogFlou1Label.Refresh();
             //Pour traitement adapté à chaque signal
             int meanEMG = Mean(EMG);
             int meanHR = Mean(ECG);
