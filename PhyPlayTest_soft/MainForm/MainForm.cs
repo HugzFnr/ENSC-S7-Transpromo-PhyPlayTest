@@ -650,11 +650,11 @@ namespace MainForm
                 //StreamWriter monStreamWriter = new StreamWriter(fichierCible);
                 StreamWriter myStreamWriter = File.AppendText(fichierCible);
                 myStreamWriter.WriteLine(String.Format("Scores scale from 0 to 30"));
-                myStreamWriter.WriteLine(String.Format("Time(ms), Boredom, Challenge, Excitement, Frustration, Fun"));
+                myStreamWriter.WriteLine(String.Format("Time(ms) | Boredom | Challenge | Excitement | Frustration | Fun"));
 
                 for (int i = 0; i < Boredom.Count(); i++)
                 {
-                    myStreamWriter.WriteLine(String.Format( "{0}, {1}, {2}, {3}, {4}, {5}",
+                    myStreamWriter.WriteLine(String.Format( "{0} | {1} | {2} | {3} | {4} | {5}",
                         i+1, Boredom.First(), Challenge.First(), Excitement.First(), Frustration.First(), Fun.First()));
                     Boredom.Remove(Boredom.First());
                     Challenge.Remove(Boredom.First());
